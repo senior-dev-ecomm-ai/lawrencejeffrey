@@ -1,0 +1,43 @@
+{{ 'template-collection.css' | asset_url | stylesheet_tag }}
+{{ 'component-loading-overlay.css' | asset_url | stylesheet_tag }}
+{{ 'component-card.css' | asset_url | stylesheet_tag }}
+{{ 'component-price.css' | asset_url | stylesheet_tag }}
+{{ 'component-product-grid.css' | asset_url | stylesheet_tag }}
+
+<link rel="preload" href="{{ 'component-rte.css' | asset_url }}" as="style" onload="this.onload=null;this.rel='stylesheet'">
+
+<noscript>{{ 'component-rte.css' | asset_url | stylesheet_tag }}</noscript>
+
+  <div class="prive_page">
+    {% render 'prive-grid', image: section.settings.image %}
+  </div>
+  
+{% schema %}
+{
+  "name": "Prive Page",
+  "class": "spaced-section collection-grid-section",
+  "settings": [
+      {
+        "type": "image_picker",
+        "id": "image",
+        "label": "Featured Image"
+      },
+      {
+        "type": "richtext",
+        "id": "tag_line",
+        "label": "Tag Line",
+        "default": "<p>Less is more...and more is more.</p>"
+      },
+      {
+        "type": "text",
+        "id": "add_class",
+        "label": "Section Class"
+      }
+  ],
+  "presets": [
+    {
+      "name": "Prive Page"
+    }
+  ]
+}
+{% endschema %}

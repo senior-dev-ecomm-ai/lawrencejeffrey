@@ -1,0 +1,231 @@
+
+<script>
+  $(function() {
+    $('#CollectionProductGrid').on('mouseenter', '.grid-item', function() {
+      $(this).find('.card-information, .card-information-price').css('opacity', '1');
+    }).on('mouseleave', '.grid-item', function() {
+      $(this).find('.card-information, .card-information-price').css('opacity', '0');
+    });
+  });
+</script>
+{%- if section.settings.infinite_scroll -%}
+  <script src="{{ 'collection-infinite-scroll.js' | asset_url }}" defer="defer"></script>
+{%- endif -%}
+
+<div id="CollectionProductGrid" class="collection_template">
+  
+  {% if collection.all_products_count > 0 %}
+    {%- paginate collection.products by section.settings.products_per_page -%}
+    {%- comment -%}
+      Editorial images are placed on a 4-column grid that runs through the whole
+      collection. Each page only renders the images whose rows sit among that
+      page's products. Numbered pages shift those rows so each page's grid
+      starts at row 1. Infinite scroll keeps the original rows and appends
+      every later page into the first grid.
+    {%- endcomment -%}
+    {%- liquid
+      assign grid_columns = 4
+      assign occupied = ',1-1,1-2,1-3,1-4,2-3,2-4,'
+
+      for block in section.blocks
+        if block.type == 'image'
+          if block.settings.image != blank and block.settings.row_placement != blank and block.settings.column_placement != blank
+            assign row_span = 1
+            assign col_span = 1
+            if block.settings.double_height
+              assign row_span = 2
+            endif
+            if block.settings.double_width
+              assign col_span = 2
+            endif
+            assign span_row_end = block.settings.row_placement | plus: row_span | minus: 1
+            assign span_col_end = block.settings.column_placement | plus: col_span | minus: 1
+            for span_row in (block.settings.row_placement..span_row_end)
+              for span_col in (block.settings.column_placement..span_col_end)
+                assign occupied = occupied | append: span_row | append: '-' | append: span_col | append: ','
+              endfor
+            endfor
+          endif
+
+          if block.settings.image_1 != blank and block.settings.row_placement_1 != blank and block.settings.column_placement_1 != blank
+            assign row_span = 1
+            assign col_span = 1
+            if block.settings.double_height_1
+              assign row_span = 2
+            endif
+            if block.settings.double_width_1
+              assign col_span = 2
+            endif
+            assign span_row_end = block.settings.row_placement_1 | plus: row_span | minus: 1
+            assign span_col_end = block.settings.column_placement_1 | plus: col_span | minus: 1
+            for span_row in (block.settings.row_placement_1..span_row_end)
+              for span_col in (block.settings.column_placement_1..span_col_end)
+                assign occupied = occupied | append: span_row | append: '-' | append: span_col | append: ','
+              endfor
+            endfor
+          endif
+        endif
+      endfor
+
+      assign first_product_index = paginate.current_offset | plus: 1
+      assign last_product_index = paginate.current_offset | plus: collection.products.size
+      assign scan_until = last_product_index
+      if paginate.current_page < paginate.pages
+        assign scan_until = last_product_index | plus: 1
+      endif
+
+      assign max_grid_row = paginate.items | divided_by: grid_columns | plus: 120
+      if max_grid_row < 40
+        assign max_grid_row = 40
+      endif
+
+      assign first_product_row = 1
+      assign end_product_row = 1
+      assign next_product_row = 0
+      assign leading_spacers = 0
+      assign placed = 0
+      assign scan_done = false
+
+      for grid_row in (1..max_grid_row)
+        if scan_done
+          break
+        endif
+        assign free_on_row = 0
+        for grid_col in (1..grid_columns)
+          assign cell_key = ',' | append: grid_row | append: '-' | append: grid_col | append: ','
+          unless occupied contains cell_key
+            assign free_on_row = free_on_row | plus: 1
+            assign placed = placed | plus: 1
+            if placed == first_product_index
+              assign first_product_row = grid_row
+              assign leading_spacers = free_on_row | minus: 1
+            endif
+            if placed == last_product_index
+              assign end_product_row = grid_row
+            endif
+            if placed == scan_until
+              if scan_until > last_product_index
+                assign next_product_row = grid_row
+              endif
+              assign scan_done = true
+              break
+            endif
+          endunless
+        endfor
+      endfor
+
+      assign cta_row_min = 1
+      assign row_shift = 0
+      if paginate.current_page > 1
+        assign cta_row_min = first_product_row
+        if section.settings.infinite_scroll
+          if leading_spacers > 0
+            assign cta_row_min = first_product_row | plus: 1
+          endif
+        else
+          assign row_shift = first_product_row | minus: 1
+        endif
+      else
+        assign leading_spacers = 0
+      endif
+
+      assign cta_row_max = 9999
+      if paginate.current_page < paginate.pages
+        assign cta_row_max = end_product_row
+        unless section.settings.infinite_scroll
+          if next_product_row == end_product_row
+            assign cta_row_max = end_product_row | minus: 1
+          endif
+        endunless
+      endif
+    -%}
+    <div class="collection">
+        {% render 'collection-header-mobile' %}
+
+        {%- if paginate.current_page > 1 -%}
+          <div class="collection-continued-header">
+            {% render 'collection-header-desktop' %}
+          </div>
+        {%- endif -%}
+
+        <div id="main-collection-product-grid" class="collection-product-grid" data-id="{{ section.id }}">
+            {%- if paginate.current_page == 1 -%}
+              {% render 'collection-header-desktop' %}
+            {%- endif -%}
+
+            {%- if leading_spacers > 0 -%}
+              {%- for spacer_index in (1..leading_spacers) -%}
+                <div class="collection-grid-spacer" aria-hidden="true"></div>
+              {%- endfor -%}
+            {%- endif -%}
+
+            {% assign count = 0 %}
+
+            {%- for product in collection.products -%}
+                {% assign count = count | plus: 1 %}
+
+                <div class="grid-item num_{{ forloop.index }}">
+                    {% render 'product-card', product_card_product: product, card_count: count %}
+                </div>
+            {%- endfor -%}
+            {%- if paginate.current_page == 1 -%}
+              <div class="grid-item double-size non-product rank-1 file-3 main_featured_col">
+                  {% render 'collection-image-featured', image: collection.featured_image %}
+              </div>
+            {%- endif -%}
+
+            {% for block in section.blocks %}
+               {% if block.type == 'image' %}
+                 {% if block.settings.image != blank and block.settings.row_placement >= cta_row_min and block.settings.row_placement <= cta_row_max %}
+                    {% assign local_row = block.settings.row_placement | minus: row_shift %}
+                    {% if local_row > 0 %}
+                      {% render 'collection-grid-cta-tile',
+                        image: block.settings.image,
+                        row: local_row,
+                        column: block.settings.column_placement,
+                        double_width: block.settings.double_width,
+                        double_height: block.settings.double_height
+                      %}
+                    {% endif %}
+                  {% endif %}
+
+                  {% if block.settings.image_1 != blank and block.settings.row_placement_1 >= cta_row_min and block.settings.row_placement_1 <= cta_row_max %}
+                    {% assign local_row = block.settings.row_placement_1 | minus: row_shift %}
+                    {% if local_row > 0 %}
+                      {% render 'collection-grid-cta-tile',
+                        image: block.settings.image_1,
+                        row: local_row,
+                        column: block.settings.column_placement_1,
+                        double_width: block.settings.double_width_1,
+                        double_height: block.settings.double_height_1
+                      %}
+                    {% endif %}
+                   {% endif %}
+                 {% endif %}
+              {% endfor %}
+            </div>
+
+            {%- if section.settings.infinite_scroll -%}
+              {%- if paginate.next -%}
+                <div class="collection-infinite-sentinel" data-infinite-sentinel data-section-id="{{ section.id }}">
+                  <p class="collection-infinite-status" data-infinite-status aria-live="polite"></p>
+                  <a class="collection-infinite-next" data-infinite-next href="{{ paginate.next.url }}">Load more products</a>
+                </div>
+              {%- endif -%}
+              <noscript>
+                {%- if paginate.next -%}
+                  <p class="collection-infinite-fallback"><a href="{{ paginate.next.url }}">Next page</a></p>
+                {%- endif -%}
+              </noscript>
+            {%- elsif paginate.pages > 1 -%}
+              {% render 'pagination', paginate: paginate, anchor: '' %}
+            {%- endif -%}
+        </div>
+        {%- endpaginate -%}
+
+  {% else %}
+  	<div class="productNotFound">
+        <p>Sorry, there are no products in this collection.</p>
+    </div>
+  {% endif %}
+</div>

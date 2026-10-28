@@ -1,0 +1,97 @@
+<div class="three-up home-row">
+    <div class="three-up-photo desktop-only">
+        {%- if section.settings.image-first != blank -%}
+          {%- if section.settings.link-first != blank -%}
+            <a href="{{ section.settings.link-first }}">
+          {% endif %}
+              <img src="{{ section.settings.image-first | image_url: width: 1500 }}"
+                   alt="{{ section.settings.image-first.alt | escape }}"
+                   loading="lazy"
+                   width="307"
+                   height="307">
+           {%- if section.settings.link-first != blank -%}
+            </a>
+           {% endif %}
+        {%- else -%}
+            {{ 'image' | placeholder_svg_tag: 'placeholder-svg' }}
+        {%- endif -%}
+    </div>
+    <div class="three-up-photo">
+        {%- if section.settings.image-second != blank -%}
+            {%- if section.settings.link-second != blank -%}
+            <a href="{{ section.settings.link-second }}">
+            {% endif %}
+              <img src="{{ section.settings.image-second | image_url: width: 1500 }}"
+                    alt="{{ section.settings.image-second.alt | escape }}"
+                    loading="lazy"
+                    width="307"
+                    height="307">
+            {%- if section.settings.link-second != blank -%}
+            </a>
+           {% endif %}
+        {%- else -%}
+            {{ 'image' | placeholder_svg_tag: 'placeholder-svg' }}
+        {%- endif -%}
+    </div>
+    <div class="three-up-photo not-mobile">
+        {%- if section.settings.image-third != blank -%}
+            {%- if section.settings.link-third != blank -%}
+            <a href="{{ section.settings.link-third }}">
+            {% endif %}
+             <img src="{{ section.settings.image-third | image_url: width: 1500 }}"
+                    alt="{{ section.settings.image-third.alt | escape }}"
+                    loading="lazy"
+                    width="307"
+                    height="307">
+            {%- if section.settings.link-third != blank -%}
+            </a>
+           {% endif %}
+        {%- else -%}
+            {{ 'image' | placeholder_svg_tag: 'placeholder-svg' }}
+        {%- endif -%}
+    </div>
+</div>
+
+{% schema %}
+{
+  "name": "Three-Up Images",
+  "settings": [
+      {
+        "type": "image_picker",
+        "id": "image-first",
+        "label": "First Image"
+      },
+      {
+        "type": "url",
+        "id": "link-first",
+        "label": "First Link URL"
+      },
+      {
+        "type": "image_picker",
+        "id": "image-second",
+        "label": "Second Image"
+      },
+      {
+        "type": "url",
+        "id": "link-second",
+        "label": "Second Link URL"
+      },
+      {
+        "type": "image_picker",
+        "id": "image-third",
+        "label": "Third Image"
+      },
+      {
+        "type": "url",
+        "id": "link-third",
+        "label": "Third Link URL"
+      }
+  ],
+  "presets": [
+    {
+      "name": "Three-Up",
+      "category": "Custom"
+    }
+  ]
+}
+{% endschema %}

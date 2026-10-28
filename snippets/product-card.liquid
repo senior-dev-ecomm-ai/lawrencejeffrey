@@ -1,0 +1,53 @@
+{% comment %}
+    Renders a product card
+
+    Accepts:
+    - product_card_product: {Object} Product Liquid object (optional)
+    - media_size: {String} Size of the product image card. Values are "square" and "portrait". Default is "square" (optional)
+    - show_secondary_image: {Boolean} Show the secondary image on hover. Default: false (optional)
+    - add_image_padding: {Boolean} Enables padding on the image to space out the grid
+    - show_vendor: {Boolean} Show the product vendor. Default: false
+    - show_image_outline: {Boolean} Show card outline. Default: true (optional)
+
+    Usage:
+    {% render 'product-card', show_vendor: section.settings.show_vendor %}
+{% endcomment %}
+
+<div class="card-wrapper">  
+   <div class="card-information">
+      <div class="card-information-text">{{ product_card_product.title }}</div>
+  </div>
+  
+  <div class="card-image product-recommendations__image">
+      <a href="{{ product_card_product.url | default: '#' }}">
+
+        {% if product_card_product.featured_media != nil %}
+            <img src="{{ product_card_product.featured_media | img_url: '533x' }}"
+                 alt="{{ product_card_product.featured_media.alt | escape }}"
+                 loading="lazy"
+                 class="motion-reduce">
+        {% else %}
+            <img src="https://via.placeholder.com/311x387/CCA43D/000000?text=Product+Placeholder+Image"
+                 alt="{{ product_card_product.title }}"
+                 loading="lazy"
+                 class="motion-reduce">
+        {%- endif -%}
+
+      </a>
+  </div>
+   
+  {% if collection.handle contains "archive-jewelry" or collection.handle contains "archive-object" %}
+    <div class="card-information-price">
+        <div class="product-price">Sold</div>
+    </div>
+    {% elsif collection.handle contains "shop-the-sale-objets" or collection.handle contains "shop-the-sale" %}
+    <div class="card-information-price">
+         {% render 'card-price', product: product_card_product, price_class: '' %}
+    </div>
+  {% else %}
+    <div class="card-information-price">    
+         {% render 'price', product: product_card_product, price_class: '' %}
+    </div>
+  {% endif %}
+  
+</div>

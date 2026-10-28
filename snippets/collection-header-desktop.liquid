@@ -1,0 +1,25 @@
+
+<div class="grid-item grid-header-desktop grid-header non-product rank-1 file-1">
+    <div class="grid-header-top">       
+        <img class="collection-top-banner" src="{{ collection.metafields.custom.title_image | file_url }}" alt="">
+    </div>
+    <div class="grid-header-bottom">
+        <div class="grid-header-bottom-supertext">
+          {% if collection.metafields.custom.tagline != blank %}
+            <div class="tag-line">{{collection.metafields.custom.tagline  }}</div>
+            {% else %}
+            <div class="tag-line">{{ section.settings.tag_line }}</div>
+          {% endif %}
+            {% render 'collection-filters' %}
+        </div>
+        <div class="grid-header-bottom-banner">
+          {% if collection.title contains "Everything" %}
+             <img class="collection-top-banner" src="{{ 'everything-top-banner.png' | asset_url }}" alt="">
+          {% else %}
+              <img class="collection-top-banner" src="{{ collection.metafields.custom.top_banner | file_url }}" alt="">
+            
+          {% endif %}
+        </div>
+    </div>
+</div>
+

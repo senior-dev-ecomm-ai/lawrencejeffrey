@@ -1,0 +1,83 @@
+{{ 'customer.css' | asset_url | stylesheet_tag }}
+
+<div class="customer customer-account">
+
+  {% if customer %} 
+   {% assign repeat_offer = false %}
+    
+    {% for customer_tag in customer.tags %}
+      
+      {% if customer_tag contains "Repeat Offender" %}
+        {% assign repeat_offer = true %}
+        {% break %}
+      {% endif %}
+    {% endfor %}
+  {% endif %}  
+  
+  <div class="account-page">
+    <div class="account-profile">
+       <div class="button_block">  
+         <div class="button_block-column edit_pro">
+            <a href="/account/addresses">
+              <button class="account-btn">Edit Profile</button>
+            </a> 
+         </div>
+         <div class="button_block-column edit_wishe">
+            <a href="/pages/wishes">
+              <button class="account-btn">Wishes</button>
+            </a>   
+         </div>
+         <div class="button_block-column edit_col">
+            <a href="/pages/my-collection-page">
+              <button class="account-btn">My Collection</button>
+            </a>
+         </div>
+        <div class="button_block-column edit_cart">      
+          <a href="/cart">
+            <button class="account-btn">Cart</button>
+          </a>    
+        </div>
+       </div>     
+    </div> 
+    <div class="customer_info">
+      <p class="account-username">Hello, {{ customer.first_name }}!</p>
+      <p class="fancy account-text">We love your taste</p>
+      <p class="logout_user">
+        <a href="{{ routes.account_logout_url }}">
+          {{ 'customer.log_out' | t }}
+        </a>
+      </p>  
+           
+    </div>
+    <div class="customer_new">
+     <div class="news_title">
+      <p class="new_header">News</p>
+       <p class="new_header next_news">News</p>
+     </div>
+    
+    <div class="account-events">
+      <div class="event-rows">
+      {% for link in linklists.bloglist.links %}
+        {% assign blog = link.object %}
+          {% for article in blog.articles %}
+  
+          <div class="event-row">
+            <div class="event-details">
+              <div class="news_blocks">
+                <p>{{ article.content }}</p>   
+              </div>
+            </div>
+          </div>
+          {% endfor %}
+      {% endfor %}         
+      </div>     
+    </div>
+   </div>
+     
+    <div class="repeat-offender">
+      <p class="offender-title">Repeat Offender Status:{% if repeat_offer %} <a href=" https://lawrence-jeffrey.myshopify.com/discount/ROS15"><span>Click Here to Apply Your 15% Discount Code: ROS15</span></a>{% endif %}</p>
+      <p class="repeat-offender-txt">{% if repeat_offer %}After Your First Purchase. You will be Considered A "Repeat Offender" and a Special Discount Offer will Appear{% else %}At checkout, find the best price autofilled on every purchase.{% endif %}</p>     
+    </div>
+  </div>
+ 
+</div>

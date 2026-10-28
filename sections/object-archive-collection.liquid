@@ -1,0 +1,84 @@
+{{ 'template-collection.css' | asset_url | stylesheet_tag }}
+{{ 'component-loading-overlay.css' | asset_url | stylesheet_tag }}
+{{ 'component-card.css' | asset_url | stylesheet_tag }}
+{{ 'component-price.css' | asset_url | stylesheet_tag }}
+{{ 'component-product-grid.css' | asset_url | stylesheet_tag }}
+
+<link rel="preload" href="{{ 'component-rte.css' | asset_url }}" as="style" onload="this.onload=null;this.rel='stylesheet'">
+
+<noscript>{{ 'component-rte.css' | asset_url | stylesheet_tag }}</noscript>
+
+<script src="{{ 'collection-filters-form.js' | asset_url }}" defer="defer"></script>
+
+{%- assign sort_by = collection.sort_by | default: collection.default_sort_by -%}
+
+{% render 'product-grid' %}
+
+{% schema %}
+{
+  "name": "t:sections.main-collection-product-grid.name",
+  "class": "spaced-section collection-grid-section",
+  "settings": [
+      {
+        "type": "range",
+        "id": "products_per_page",
+        "min": 10,
+        "max": 1000,
+        "step": 10,
+        "default": 990,
+        "label": "t:sections.main-collection-product-grid.settings.products_per_page.label"
+      },
+      {
+        "type": "checkbox",
+        "id": "infinite_scroll",
+        "label": "Infinite scroll",
+        "info": "Load the next set of products while scrolling. Each set uses Products per page, and banner tiles keep their place in that set.",
+        "default": false
+      },
+      {
+        "type": "text",
+        "id": "tag_line",
+        "label": "Tag Line",
+        "default": "Less is more...and more is more."
+      }
+  ],
+  "blocks": [
+      {
+        "type": "image",
+        "name": "t:sections.collage.blocks.image.name",
+        "settings": [
+          {
+            "type": "image_picker",
+            "id": "image",
+            "label": "t:sections.collage.blocks.image.settings.image.label"
+          },
+          {
+            "type": "number",
+            "id": "row_placement",
+            "label": "Row Placement",
+            "default": 10
+          },
+          {
+            "type": "number",
+            "id": "column_placement",
+            "label": "Column Placement",
+            "default": 1
+          },
+          {
+            "type": "checkbox",
+            "id": "double_width",
+            "default": false,
+            "label": "Double Width"
+          },
+          {
+            "type": "checkbox",
+            "id": "double_height",
+            "default": false,
+            "label": "Double Height"
+          }
+       ]
+    }
+  ],
+  "max_blocks": 50
+  }
+{% endschema %}

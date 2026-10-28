@@ -1,0 +1,34 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-charities",
+      "custom_css": [
+        ".charities-gallery > * {flex: 1 1 calc(33.3333% - 20px); max-width: calc( 33.3333% - 20px ); /* Setting a max-width to ensure it respects the desired width */}"
+      ],
+      "settings": {}
+    },
+    "163510682626d08c37": {
+      "type": "one-up",
+      "disabled": true,
+      "settings": {
+        "image": "shopify://shop_images/Charity_279b0cb7-f3fc-479c-a556-682bc2ada46e.png",
+        "link": "",
+        "display_on_mobile": false,
+        "add_class": ""
+      }
+    }
+  },
+  "order": [
+    "main",
+    "163510682626d08c37"
+  ]
+}

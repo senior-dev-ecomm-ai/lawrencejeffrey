@@ -1,0 +1,189 @@
+{{ 'customer.css' | asset_url | stylesheet_tag }}
+
+<script type="text/javascript">
+  
+  $(document).ready(function() {
+    $('#submitCustomer').prop('disabled', true);
+     $('#RegisterForm-password-confirm').keyup(function() {
+        if ( $('#RegisterForm-password').val() == $('#RegisterForm-password-confirm').val()) {
+           $('#submitCustomer').prop('disabled', false);
+        } else {
+        	$('#submitCustomer').prop('disabled', true);
+        }
+     });
+ });
+  
+ 
+</script>
+
+{%- form 'create_customer', novalidate: 'novalidate' -%}
+      {%- if form.errors -%}
+      <div class="errormsg" id="errormsg">
+        <h5 class="form__message" tabindex="-1" autofocus="">
+            <span class="visually-hidden">Error </span>
+              <i class="fa fa-exclamation-circle" style="color: rgb(235,4,30)"></i>
+              Please adjust the following:
+          </h5>
+        <ul> 
+          {%- for field in form.errors -%}
+          <li>
+            <span style="font-weight: 100; font-size: .8rem">
+            {%- if field == 'form' -%}
+            {{ form.errors.messages[field] }}
+            {%- else -%}
+            <a href="#RegisterForm-{{ field }}">
+              {{ form.errors.translated_fields[field] | capitalize }}
+              {{ form.errors.messages[field] }}
+            </a>
+            {%- endif -%}
+            </span>
+          </li>
+          {%- endfor -%}
+        </ul>
+      </div>
+      {%- endif -%}
+  <div class="customer register">
+    <div class="customer-register">
+      <div class="register-grid-item1">
+         <p>It's Your Story</p>
+      </div>
+      <div class="register-grid-item2">
+        <div class="field registerfield"> 
+          <label for="RegisterForm-FirstName">
+            {{ 'customer.register.first_name' | t }}
+          </label>
+          <input
+                 type="text"
+                 name="customer[first_name]"
+                 id="RegisterForm-FirstName"
+                 {% if form.first_name %}value="{{ form.first_name }}"{% endif %}
+                 autocomplete="given-name"
+                 placeholder="{{ 'customer.register.first_name' | t }}"
+                 >     
+        </div>
+        <div class="field registerfield">
+          <label for="RegisterForm-LastName">
+            {{ 'customer.register.last_name' | t }}
+          </label>
+          <input
+                 type="text"
+                 name="customer[last_name]"
+                 id="RegisterForm-LastName"
+                 {% if form.last_name %}value="{{ form.last_name }}"{% endif %}
+                 autocomplete="family-name"
+                 placeholder="{{ 'customer.register.last_name' | t }}"
+                 >   
+        </div>
+        <div class="field registerfield">
+          <label for="RegisterForm-email">
+            {{ 'customer.register.email' | t }}
+          </label>
+          <input
+                 type="email"
+                 name="customer[email]"
+                 id="RegisterForm-email"
+                 {% if form.email %} value="{{ form.email }}"{% endif %}
+                 spellcheck="false"
+                 autocapitalize="off"
+                 autocomplete="email"
+                 aria-required="true"
+                 {% if form.errors contains 'email' %}
+                 aria-invalid="true"
+                 aria-describedby="RegisterForm-email-error"
+                 {% endif %}
+                 placeholder="{{ 'customer.register.email' | t }}"
+                 >
+        </div>
+        <div class="field registerfield">
+          <label for="RegisterForm-email">
+            {{ 'customer.register.confirm_email' | t }}
+          </label>
+          <input
+                 type="email"
+                 name="customer[email]"
+                 id="RegisterForm-email"
+                 {% if form.email %} value="{{ form.email }}"{% endif %}
+                 spellcheck="false"
+                 autocapitalize="off"
+                 autocomplete="email"
+                 aria-required="true"
+                 {% if form.errors contains 'email' %}
+                 aria-invalid="true"
+                 aria-describedby="RegisterForm-email-error"
+                 {% endif %}
+                 placeholder="{{ 'customer.register.confirm_email' | t }}"
+                 >
+        </div>
+        <div class="field registerfield" id="register_password">
+          <label for="RegisterForm-password">
+            {{ 'customer.register.password' | t }}
+          </label>
+          <input
+                 type="password"
+                 name="customer[password]"
+                 id="RegisterForm-password"
+                 aria-required="true"
+                 {% if form.errors contains 'password' %}
+                 aria-invalid="true"
+                 aria-describedby="RegisterForm-password-error"
+                 {% endif %}
+                 placeholder="{{ 'customer.register.password' | t }}"
+                 >
+        </div>
+        <div class="field registerfield" id="register_confirm_password">
+          <label for="RegisterForm-password">
+            {{ 'customer.register.confirm_password' | t }}
+          </label>
+          <input
+                 type="password"
+                 name="customer[password]"
+                 id="RegisterForm-password-confirm"
+                 aria-required="true"
+                 {% if form.errors contains 'password' %}
+                 aria-invalid="true"
+                 aria-describedby="RegisterForm-password-error"
+                 {% endif %}
+                 placeholder="{{ 'customer.register.confirm_password' | t }}"
+                 >
+        </div>
+        <div class="register_submit">
+          <button id="submitCustomer">SAVE CHANGES</button>
+        </div>
+        
+      </div>
+      <div class="register-grid-item3">
+        <div class="register-grid-item-subtext">
+          <p class="email_to">
+          {{ 'customer.register.subtext' | t }}
+          </p>
+        <p class="top-title">
+          New collections, fabulous shows, tempting sales and free free free tickets to those fabulous shows!
+        </p>
+        <p class="bottom-title">
+          Disclaimer: We won't send more than a couple of emails a month. We don't want to be pushy!
+        </p>
+        <input type="checkbox" id="myCheck" class="mailcheckbox">
+        </div>      
+     </div>
+    </div>
+  </div>
+{%- endform -%}
+
+
+{% comment %}
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    var checkBox = document.getElementById("myCheck");
+    checkBox.addEventListener('change', () => {
+      if (checkBox.checked == true){
+        document.querySelector(".register_submit #submitCustomer").classList.add('clickable');
+      
+      } else {
+        document.querySelector(".register_submit #submitCustomer").classList.remove('clickable');
+     
+      }
+    })
+
+  })
+</script>
+{% endcomment %}

@@ -1,0 +1,23 @@
+
+<div class="grid-item grid-header non-product rank-1 file-1">
+  {% if page.metafields.custom.title_image != blank %}
+    <div class="grid-header-top">       
+        <img class="top-banner" src="{{ page.metafields.custom.title_image | file_url }}" alt="">
+    </div>
+    {% endif %}
+  
+    <div class="grid-header-bottom">
+        <div class="grid-header-bottom-supertext">
+          {% if page.metafields.custom.tagline != blank %}
+            <div class="tag-line">{{ page.metafields.custom.tagline }}</div>
+          {% else %}
+            <div class="tag-line">{{ section.settings.tag_line }}</div>
+          {% endif %}         
+        </div>
+       {% if page.metafields.custom.page_banner != blank %}
+        <div class="grid-header-bottom-banner">
+          <img class="bottom-banner" src="{{ page.metafields.custom.page_banner | file_url }}" alt="">
+        </div>
+      {% endif %}
+    </div>
+</div>

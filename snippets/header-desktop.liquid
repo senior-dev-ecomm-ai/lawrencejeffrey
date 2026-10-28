@@ -1,0 +1,98 @@
+<!--suppress HtmlUnknownTarget -->
+<header class="ljj-header header-desktop header header--{{ section.settings.logo_position }} {% if section.settings.menu != blank %} header--has-menu{% endif %}">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <div class="top_header">
+    <div class="shopping-links">
+      <div class="nav-links">
+        <div class="header_shopping_link">
+        <a href="/pages/our-lookbook">Lookbook</a>
+        
+        <span style=" margin: 0 3px; display: inline-flex;" >
+          <svg width="10" height="10">
+              <circle cx="5" cy="5" r="2.5"/>
+          </svg>
+        </span>
+        
+           <a href="/pages/wishes"> Wishes </a>
+        </div>
+      </div>
+    </div>
+    <div class="account-links desktop-only">
+      <div class="nav-links">
+        <div class="header_account-links">
+                  
+          <a href="{%- if customer -%}{{ routes.account_url }}{%- else -%}{{ routes.account_login_url }}{%- endif -%}">
+              Account
+          </a> 
+          <span style=" margin: 0 3px; display: inline-flex;" >
+              <svg width="10" height="10">
+              <circle cx="5" cy="5" r="2.5"/>
+          </svg>
+          </span>          
+          <a href="{{ routes.cart_url }}">Cart</a>
+        </div>
+      </div>
+    </div>
+  </div>   
+  <div class="logo_block">
+    <div class="header__heading logo test">
+        <a href="{{ routes.root_url }}"class="logo_link">
+       {% comment %}
+       <img class="main_logo" src="{{ 'ljj-logo.png' | asset_img_url:'master' }}">
+       <img class="hover_logo" src="{{ 'logo-hover.png' | asset_img_url:'master'}}">
+       {% endcomment %}
+       <img class="main_logo" src="{{ 'JEFFREY-Logo.png' | asset_img_url:'master' }}">
+       <img class="hover_logo" src="{{ 'JEFFREY-Logo-hover.png' | asset_img_url:'master'}}">
+      </a>
+    </div>
+  </div>
+  <div class="bottom_header">
+    <div class="address">
+      {% if template.suffix contains "previet" %}
+        <span class="add_text">7 West Street Litchfield, CT 06759</span>
+      {% else %}
+        <span class="add_text">7 West Street Litchfield, CT 06759</span> <span class="phone-number">860.567.5084</span>  
+      {% endif %}
+    </div>
+    {% render 'site-dropdown' %}    
+    {% if template.suffix contains "previet" %}
+      <div class="custom-center-text">
+        <span class="custom_add_text">Purchase or Inquire:</span><span> Call 860.567.5084</span>
+      </div>
+    {% endif%}
+    <div class="header_categories">
+      <nav class="categories">
+          <div class="category-button category-jewelry nav-links category-left" data-attach="">
+              <div class="category-text">Jewelry</div>
+            {%  render 'category-dropdown', placement: 'desktop', category: 'jewelry', links: linklists.jewelry-menu.links %}
+          </div>       
+          <div class="category-button category-objets nav-links category-right"  data-attach="">
+              <div class="category-text">Objets</div>
+            {%  render 'category-dropdown', placement: 'desktop', category: 'objets', links: linklists.objets-menu.links %}
+          </div>
+      </nav>
+    </div>
+    <div class="locate-links desktop-only">
+      {% if template.suffix contains "previet" %}
+       <div class="numbers">
+         <a href="mailto:info@lawrencejeffrey.com">info@lawrencejeffrey.com</a>
+       </div>
+      {% else %}
+      <div class="nav-links">
+        <div class="header_locate_links">
+          <a href="/pages/contact-us">Contact</a>
+          <span style=" margin: 0 3px; display: inline-flex;" >
+            <svg width="10" height="10">
+                <circle cx="5" cy="5" r="2.5"/>
+            </svg>
+          </span>
+          <span class="search-button-desk search-button" data-attach="search-dropdown-desktop">Search</span>
+        </div>       
+        {% render 'search-dropdown-desktop' %}
+      </div>
+      {% endif %}
+    </div>
+  </div>
+</header>
+
+  

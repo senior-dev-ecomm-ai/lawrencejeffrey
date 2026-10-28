@@ -1,0 +1,115 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "current": {
+    "page_width": "1600",
+    "favicon": "shopify://shop_images/favion.png",
+    "checkout_logo_image": "shopify://shop_images/ljj-logo.png",
+    "checkout_logo_position": "center",
+    "checkout_logo_size": "large",
+    "checkout_body_background_color": "#FFFFFF",
+    "checkout_input_background_color_mode": "white",
+    "checkout_sidebar_background_color": "#FFFFFF",
+    "checkout_heading_font": "Garamond, Baskerville, 'Baskerville Old Face', 'Hoefler Text', 'Times New Roman'",
+    "checkout_body_font": "Garamond, Baskerville, 'Baskerville Old Face', 'Hoefler Text', 'Times New Roman'",
+    "checkout_accent_color": "#0098fe",
+    "checkout_button_color": "#0098fe",
+    "checkout_error_color": "#dd761d",
+    "sections": {
+      "header": {
+        "type": "header",
+        "custom_css": [
+          ".numbers:hover {color: #ff8120 !important;}",
+          ".header-desktop .bottom_header {line-height: 24px; padding-bottom: 1px;}"
+        ],
+        "settings": {
+          "logo": "shopify://shop_images/ljj-logo.png",
+          "logo_width": 500,
+          "logo_position": "middle-left",
+          "menu": "main-menu",
+          "show_line_separator": true,
+          "enable_sticky_header": true
+        }
+      },
+      "footer": {
+        "type": "footer",
+        "blocks": {
+          "footer-0": {
+            "type": "link_list",
+            "settings": {
+              "heading": "Quick links",
+              "menu": "footer-menu1",
+              "column_class": "column-one"
+            }
+          },
+          "link_list_UmhWUL": {
+            "type": "link_list",
+            "settings": {
+              "heading": "Quick links",
+              "menu": "footer-menu2",
+              "column_class": "column-two"
+            }
+          },
+          "link_list_QMeFMp": {
+            "type": "link_list",
+            "settings": {
+              "heading": "Quick links",
+              "menu": "footer-menu3",
+              "column_class": "column-three"
+            }
+          }
+        },
+        "block_order": [
+          "footer-0",
+          "link_list_UmhWUL",
+          "link_list_QMeFMp"
+        ],
+        "custom_css": [],
+        "settings": {
+          "main_logo": "shopify://shop_images/JEFFREY-with-address.webp",
+          "main_logo_hover": "shopify://shop_images/JEFFREY-with-address-orange.webp",
+          "color_scheme": "inverse",
+          "newsletter_enable": true,
+          "newsletter_heading": "Sign up to our emails",
+          "show_social": false,
+          "enable_country_selector": true,
+          "enable_language_selector": true,
+          "payment_enable": true
+        }
+      }
+    },
+    "content_for_index": [],
+    "blocks": {
+      "855628211100114053": {
+        "type": "shopify://apps/klaviyo-email-marketing-sms/blocks/klaviyo-onsite-embed/2632fe16-c075-4321-a88b-50b567f42507",
+        "disabled": false,
+        "settings": {}
+      },
+      "4061177414627956758": {
+        "type": "shopify://apps/wishlist-wishify/blocks/app-embed/e14a43b5-34c6-492d-b46f-3ad2eda08696",
+        "disabled": false,
+        "settings": {}
+      },
+      "5946647744298494267": {
+        "type": "shopify://apps/wishlist-plus/blocks/wishlist-app-embed/80c3b1fc-3a8f-407e-8367-ffdeebb8b612",
+        "disabled": false,
+        "settings": {}
+      },
+      "8962992520437913685": {
+        "type": "shopify://apps/yotpo-loyalty-rewards/blocks/loader-app-embed-block/2f9660df-5018-4e02-9868-ee1fb88d6ccd",
+        "disabled": true,
+        "settings": {
+          "inject_modules_loader": true,
+          "inject_sdk_loader": true
+        }
+      }
+    }
+  }
+}

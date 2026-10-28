@@ -1,0 +1,113 @@
+<script>
+  $(document).ready(function(){
+  
+      $(".button-left").click(function(){
+        $(".category-objets").removeClass("highlighted");
+        if(!$(".dropdown-jewelry").hasClass("dropped")){
+          	$(".category-jewelry").removeClass("highlighted");
+        }else{
+          $(".right-photo").removeClass("tucked");
+          $(".dropdown-objets").removeClass("dropped");
+        }        
+        });
+
+      $(".button-right").click(function(){
+		$(".category-jewelry").removeClass("highlighted");
+        if(!$(".dropdown-objets").hasClass("dropped")){
+          	$(".category-objets").removeClass("highlighted");
+        }else
+        {
+          $(".left-photo").removeClass("tucked");
+          $(".dropdown-jewelry").removeClass("dropped");
+        } 
+      });
+  });
+	
+  function setDropdownHeight() {
+  		var clientHeight = $(".left-photo").height();
+  		console.log(clientHeight);
+		//$(".dropdown-desktop").css("height",clientHeight+"px");
+  }
+</script>
+
+<div class="two-up home-row">
+    
+    <div class="two-up-left">
+      <div class="mobile-index-category-button category-button button-left category-jewelry mobile-only"
+         data-attach="dropdown-jewelry.dropdown-mobilehome"
+         data-tuck="two-up-photo.left-photo">
+        {{ 'jewelry-button-transparent.png' | asset_url | img_tag: "Jewelry" }}
+      </div>
+      <div class="two-up-photo left-photo">
+          {%- if section.settings.image-left != blank -%}
+              <a href="{{ section.settings.link-left }}"
+                 class="left-photo photo-link">
+                  <img src="{{ section.settings.image-left | image_url: width: 1500 }}"
+                       alt="{{ section.settings.image-left.alt | escape }}"
+                       loading="lazy"
+                       width="1500"
+                       onload="setDropdownHeight()"></a>
+          {%- else -%}
+              {{ 'image' | placeholder_svg_tag: 'placeholder-svg' }}
+          {%- endif -%}
+        </div>
+        {%  render 'category-dropdown', placement: 'mobilehome', category: 'jewelry', links: linklists.jewelry-menu.links %}
+    </div>
+
+    <div class="two-up-right">
+        <div class="two-up-photo right-photo">
+
+        {%- if section.settings.image-right != blank -%}
+            <a href="{{ section.settings.link-right }}" class="right-photo photo-link">
+          <img src="{{ section.settings.image-right | image_url: width: 1500 }}"
+               alt="{{ section.settings.image-right.alt | escape }}"
+               loading="lazy"  width="1500">
+            </a>
+        {%- else -%}
+            {{ 'image' | placeholder_svg_tag: 'placeholder-svg' }}
+        {%- endif -%}
+        </div>
+        {%  render 'category-dropdown', placement: 'mobilehome', category: 'objets', links: linklists.objets-menu.links %}
+        
+        <div class="mobile-index-category-button category-button button-right category-objets mobile-only"
+           data-attach="dropdown-objets.dropdown-mobilehome"
+           data-tuck="two-up-photo.right-photo">
+          {{ 'objets-button-transparent.png' | asset_url | img_tag: "Objets" }}
+       </div>
+    </div>
+    
+</div>
+
+{% schema %}
+  {
+    "name": "Two-Up Images",
+    "settings": [
+        {
+          "type": "image_picker",
+          "id": "image-left",
+          "label": "Left Image"
+        },
+        {
+          "type": "url",
+          "id": "link-left",
+          "label": "Left Link URL"
+        },
+        {
+          "type": "image_picker",
+          "id": "image-right",
+          "label": "Right Image"
+        },
+        {
+          "type": "url",
+          "id": "link-right",
+          "label": "Right Link URL"
+        }
+    ],
+    "presets": [
+      {
+        "name": "Two-Up",
+        "category": "Custom"
+      }
+    ]
+  }
+{% endschema %}

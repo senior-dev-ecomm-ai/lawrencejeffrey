@@ -1,0 +1,95 @@
+
+<div class="
+  {%- if section.settings.header_side != 'right' -%}
+    two-column-text-section home-row not-mobile header-left
+  {%- else -%}
+    two-column-text-section home-row not-mobile header-right
+  {%- endif -%}">
+  
+  <div class="two-column-header event">
+    {%- if section.settings.img_link != blank -%}
+      <a href="{{ section.settings.img_link }}">
+    {% endif %}
+     {%- if section.settings.header_side !=blank -%}
+      {{ section.settings.header }}
+     {% endif %}
+     
+      {%- if section.settings.image != blank -%}         
+       <img src="{{ section.settings.image| img_url: '420x' }}"
+           alt="{{ section.settings.image | escape }}"
+           loading="lazy" >       
+      {%- endif -%}
+     {%- if section.settings.img_link != blank -%}
+      </a>
+     {% endif %}  
+  </div>
+  
+  <div class="two-column-text">
+    <div class="show-schedule">
+      {% for link in linklists.bloglist.links %}
+      {% assign blog = link.object %}
+      {% for article in blog.articles %}  
+      
+        <div class="schedule-row">
+         
+          {{ article.content }}
+         
+        </div>
+              
+      {% endfor %} 
+    {% endfor %}
+    </div>
+  </div>
+  
+</div>
+
+{% schema %}
+  {
+    "name": "Schedule Event",
+    "settings": [
+      {
+        "id": "header",
+        "type": "text",
+        "label": "Row Header",
+        "default": "Lawrence Jeffrey"
+      },
+      {
+        "type": "image_picker",
+        "id": "image",
+        "label": "Header Image"
+      },
+      {
+        "type": "url",
+        "id": "img_link",
+        "label": "Image Link"
+      },
+      {
+        "id": "text",
+        "type": "html",
+        "label": "Add custom text below",
+        "default": "<p>Add your text here</p>"
+      }, 
+      {
+        "type": "radio",
+        "id": "header_side",
+        "label": "Header Side",
+        "options": [
+          {
+            "value": "left",
+            "label": "Left"
+          }, {
+            "value": "right",
+            "label": "Right"
+          }
+        ],
+        "default": "left"
+      }
+    ],
+    "presets": [
+      {
+        "name": "Schedule Event",
+        "category": "Custom"
+      }
+    ]
+  }
+{% endschema %}

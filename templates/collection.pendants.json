@@ -1,0 +1,64 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "banner": {
+      "type": "main-collection-banner",
+      "settings": {}
+    },
+    "product-grid": {
+      "type": "main-collection-product-grid",
+      "blocks": {
+        "c137b0f0-3975-41e7-8e81-13d1da7cbf12": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/17289bi_crop.jpg",
+            "row_placement": 4,
+            "column_placement": 4,
+            "double_width": false,
+            "double_height": false,
+            "image_1": "shopify://shop_images/zDSC00062_process_this_one2_11.05.2021_23321_crop.jpg",
+            "row_placement_1": 5,
+            "column_placement_1": 1,
+            "double_width_1": false,
+            "double_height_1": false
+          }
+        },
+        "ce15e778-9cec-41c6-b310-2b960a808b54": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/2015.11.10_fc26c0cb-ff6b-4fc9-a3cf-a50ba6dff5cb.jpg",
+            "row_placement": 7,
+            "column_placement": 3,
+            "double_width": false,
+            "double_height": false,
+            "image_1": "shopify://shop_images/2018.09.07_crop.jpg",
+            "row_placement_1": 9,
+            "column_placement_1": 2,
+            "double_width_1": false,
+            "double_height_1": false
+          }
+        }
+      },
+      "block_order": [
+        "c137b0f0-3975-41e7-8e81-13d1da7cbf12",
+        "ce15e778-9cec-41c6-b310-2b960a808b54"
+      ],
+      "settings": {
+        "products_per_page": 184,
+        "tag_line": "Less is more...and more is more."
+      }
+    }
+  },
+  "order": [
+    "banner",
+    "product-grid"
+  ]
+}

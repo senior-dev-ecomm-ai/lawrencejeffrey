@@ -1,0 +1,104 @@
+<div class="four-up home-row">
+    <div class="four-up-photo">
+        {%- if section.settings.image-first != blank -%}
+            <a href="{{ section.settings.link-first }}">
+                <img src="{{ section.settings.image-first | image_url: width: 1500 }}"
+                     alt="{{ section.settings.image-first.alt | escape }}"
+                     loading="lazy"
+                     width="304"
+                     height="304"></a>
+        {%- else -%}
+            {{ 'image' | placeholder_svg_tag: 'placeholder-svg' }}
+        {%- endif -%}
+    </div>
+    <div class="four-up-photo">
+        {%- if section.settings.image-second != blank -%}
+            <a href="{{ section.settings.link-second }}"><img
+                        src="{{ section.settings.image-second | image_url: width: 1500 }}"
+                        alt="{{ section.settings.image-second.alt | escape }}"
+                        loading="lazy"
+                        width="304"
+                        height="304"></a>
+        {%- else -%}
+            {{ 'image' | placeholder_svg_tag: 'placeholder-svg' }}
+        {%- endif -%}
+    </div>
+    <div class="four-up-photo not-mobile">
+        {%- if section.settings.image-third != blank -%}
+            <a href="{{ section.settings.link-third }}">
+              <img src="{{ section.settings.image-third | image_url: width: 1500 }}"
+                         alt="{{ section.settings.image-third.alt | escape }}"
+                         loading="lazy"
+                         width="304"
+                         height="304"></a>
+        {%- else -%}
+            {{ 'image' | placeholder_svg_tag: 'placeholder-svg' }}
+        {%- endif -%}
+    </div>
+    <div class="four-up-photo not-mobile">
+        {%- if section.settings.image-fourth != blank -%}
+            <a href="{{ section.settings.link-fourth }}"><img
+                        src="{{ section.settings.image-fourth |image_url: width: 1500 }}"
+                        alt="{{ section.settings.image-fourth.alt | escape }}"
+                        loading="lazy"
+                        width="304"
+                        height="304"></a>
+        {%- else -%}
+            {{ 'image' | placeholder_svg_tag: 'placeholder-svg' }}
+        {%- endif -%}
+    </div>
+</div>
+
+{% schema %}
+{
+"name": "Four-Up Images",
+"settings": [
+{
+"type": "image_picker",
+"id": "image-first",
+"label": "First Image"
+},
+{
+"type": "url",
+"id": "link-first",
+"label": "First Link URL"
+},
+{
+"type": "image_picker",
+"id": "image-second",
+"label": "Second Image"
+},
+{
+"type": "url",
+"id": "link-second",
+"label": "Second Link URL"
+},
+{
+"type": "image_picker",
+"id": "image-third",
+"label": "Third Image"
+},
+{
+"type": "url",
+"id": "link-third",
+"label": "Third Link URL"
+},
+{
+"type": "image_picker",
+"id": "image-fourth",
+"label": "Fourth Image"
+},
+{
+"type": "url",
+"id": "link-fourth",
+"label": "Fourth Link URL"
+}
+],
+"presets": [
+{
+"name": "Four-Up",
+"category": "Custom"
+}
+]
+}
+{% endschema %}

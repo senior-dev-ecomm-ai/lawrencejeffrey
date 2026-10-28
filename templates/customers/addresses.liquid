@@ -1,0 +1,101 @@
+{{ 'customer.css' | asset_url | stylesheet_tag }}
+
+<script src="{{ 'customer.js' | asset_url }}" defer></script>
+
+  <div class="customer addresses" data-customer-addresses >
+          
+    <div data-address id="edit-new-address" class="">      
+        
+          <form method="post" action="/account/addresses/{{ customer.default_address.id }}" accept-charset="UTF-8">
+            <input type="hidden" name="_method" value="put">
+            <input type="hidden" name="form_type" value="customer_address">
+            <input type="hidden" name="utf8" value="✓">
+            <input type="hidden" name="return_to" value="/account">
+            <div class="new-address-form" >   
+              <div class="register-grid-item1">
+               <p>It's Your Story</p>
+              </div>
+              
+              <div class="customer-addresses">
+                <div class="field">
+                  <label for="AddressFirstNameNew">{{ 'customer.addresses.first_name' | t }}</label>
+                  <input type="text" id="AddressFirstNameNew" name="address[first_name]" value="{{ customer.default_address.first_name }}" autocomplete="given-name" placeholder="{{ 'customer.addresses.first_name' | t }}">
+                </div>
+                <div class="field">
+                  <label for="AddressLastNameNew">{{ 'customer.addresses.last_name' | t }}</label>
+                  <input type="text" id="AddressLastNameNew" name="address[last_name]" value="{{ customer.default_address.last_name }}" autocomplete="family-name" placeholder="{{ 'customer.addresses.last_name' | t }}">
+                </div>
+                <div class="field"> 
+                  <label for="EmailAddress">{{ 'customer.register.email' | t }}</label>
+                  <input type="tel" id="EmailAddress" name="address[email]" value="{{ customer.default_address.email }}" autocomplete="email" placeholder="{{ 'customer.register.confirm_email' | t }}">
+                </div>
+                <div class="field"> 
+                  <label for="ConfirmAddress">{{ 'customer.register.confirm_email' | t }}</label>
+                  <input type="tel" id="ConfirmAddress" name="address[email]" value="{{ customer.default_address.email }}" autocomplete="email" placeholder="{{ 'customer.register.confirm_email' | t }}">
+                </div> 
+                <div class="field"> 
+                  <label for="CustomerPassword">{{ 'customer.register.password' | t }}</label>
+                  <input type="tel" id="CustomerPassword" name="address[password]" value="{{ customer.default_address.password }}" autocomplete="email" placeholder="{{ 'customer.register.password' | t }}">
+                </div> 
+                <div class="field"> 
+                  <label for="ConfirmPassword">{{ 'customer.register.confirm_password' | t }}</label>
+                  <input type="tel" id="ConfirmPassword" name="address[password]" value="{{ customer.default_address.password }}" autocomplete="email" placeholder="{{ 'customer.register.confirm_password' | t }}">
+                </div>
+                
+                <div class="field">
+                  <label for="AddressPhoneNew">{{ 'customer.addresses.phone' | t }}</label>
+                  <input type="tel" id="AddressPhoneNew" name="address[phone]" value="{{ customer.default_address.phone }}" autocomplete="tel" placeholder="{{ 'customer.addresses.phone' | t }}">
+                </div>
+                <div class="field">
+                  <label for="AddressAddress1New">Street Address</label>
+                  <input type="text" id="AddressAddress1New" name="address[address1]" value="{{ customer.default_address.address1 }}" autocomplete="address-line1" placeholder="{{ 'customer.addresses.address1' | t }}">
+                </div>
+                <div class="field">
+                  <label for="AddressAddress2New">Apt#, Floor, etc</label>
+                  <input type="text" id="AddressAddress2New" name="address[address2]" value="{{ customer.default_address.address2 }}" autocomplete="address-line2" placeholder="{{ 'customer.addresses.address2' | t }}">
+                </div>
+                <div class="field">
+                  <label for="AddressCityNew">State/Region</label>
+                  <input type="text" id="AddressCityNew" name="address[state]" value="{{ customer.default_address.city }}" autocomplete="address-level2" placeholder="{{ 'customer.addresses.city' | t }}">
+                </div>
+                <div class="field">
+                  <label for="AddressCityNew">{{ 'customer.addresses.city' | t }}</label>
+                  <input type="text" id="AddressCityNew" name="address[city]" value="{{ customer.default_address.city }}" autocomplete="address-level2" placeholder="{{ 'customer.addresses.city' | t }}">
+                </div>          
+                <div class="field">
+                  <label for="AddressZipNew">{{ 'customer.addresses.zip' | t }}</label>
+                  <input type="text" id="AddressZipNew" name="address[zip]" value="{{ customer.default_address.zip }}" autocapitalize="characters" autocomplete="postal-code" placeholder="{{ 'customer.addresses.zip' | t }}">
+                </div>
+                <div class="register_submit">
+                  <button type="submit">SAVE CHANGES</button>
+                </div>
+              </div>
+                
+      
+              <div class="edit_email_to register-grid-item3">
+                <div class="register-grid-item-subtext">
+                  <div class="edit_profile">
+                    <input type="checkbox" id="edit_Check" class="mailcheckbox mobile_top">                  
+                    <p class="email_to">{{ 'customer.register.subtext' | t }}</p>
+                  </div>
+                <p class="top-title">
+                  New collections, fabulous shows, tempting sales and free free free tickets to those fabulous shows!
+                </p>
+                <p class="bottom-title">
+                  Disclaimer: We won't send more than a couple of emails a month. We don't want to be pushy!
+                </p>
+                <input type="checkbox" id="edit_Check" class="mailcheckbox desk_top">
+                </div>      
+             </div>
+          </div>         
+          </form>     
+      
+    </div>
+</div>
+
+<div class="footer-buttons mobile-only register-footer">
+    <div class="footer-button register-footer-btn"><a style="color:white;" href="https://goo.gl/maps/q71e8yfYrDS8F6nK8">Visit</a></div>
+  	<div class="footer-button register-footer-btn"><a style="color:white;" href="tel:+1 860-567-5084">Call</a></div>
+  	<div class="footer-button register-footer-btn"><a style="color:white;" href="https://lawrence-jeffrey.myshopify.com/pages/shows">Shows</a></div>
+</div>
+

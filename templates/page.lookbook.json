@@ -1,0 +1,302 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "8181dd21-67e7-423a-8e79-5103218771fe": {
+      "type": "Image-slider",
+      "blocks": {
+        "63eeb5db-afd6-4cd5-8515-ff73ed1149e1": {
+          "type": "Image",
+          "settings": {
+            "pro_img": "shopify://shop_images/slider-two.webp",
+            "pro_title": "",
+            "button_link": "",
+            "btn_text": ""
+          }
+        },
+        "1440dbbd-5226-49bf-a283-d62025d1a651": {
+          "type": "Image",
+          "settings": {
+            "pro_img": "shopify://shop_images/slider-one.webp",
+            "pro_title": "",
+            "button_link": "",
+            "btn_text": ""
+          }
+        },
+        "8f619ed8-89f1-41c1-a621-a32b4045c143": {
+          "type": "Image",
+          "settings": {
+            "pro_img": "shopify://shop_images/zeditDSC09858_444427ec-f92a-4230-8e18-740ec0eeb7df.jpg",
+            "pro_title": "",
+            "button_link": "",
+            "btn_text": ""
+          }
+        },
+        "a81e1f11-41be-4605-9291-008451826e86": {
+          "type": "Image",
+          "settings": {
+            "pro_img": "shopify://shop_images/zeditDSC00166c_turquoise_eyes_0b9f532b-04d9-421d-9fad-e31707dfba37.jpg",
+            "pro_title": "",
+            "button_link": "",
+            "btn_text": ""
+          }
+        },
+        "0ba57f15-02c8-40cc-9cbe-357e0ccf8dca": {
+          "type": "Image",
+          "settings": {
+            "pro_img": "shopify://shop_images/zeditDSC00460_bbdf09a0-fd0e-4dee-8e69-c295185a5045.jpg",
+            "pro_title": "",
+            "button_link": "",
+            "btn_text": ""
+          }
+        },
+        "731e0db3-0ccc-40b8-a0cb-50bc7319b825": {
+          "type": "Image",
+          "settings": {
+            "pro_img": "shopify://shop_images/zeditDSC00220_b101020d-aa81-4234-9972-06e47a53f6e0.jpg",
+            "pro_title": "",
+            "button_link": "",
+            "btn_text": ""
+          }
+        },
+        "41d30773-efc8-4b60-aefa-df0232e80af5": {
+          "type": "Image",
+          "settings": {
+            "pro_img": "shopify://shop_images/zeditDSC09741_-_Copy_04bb022d-086f-4833-98aa-7d93eaec69e0.jpg",
+            "pro_title": "",
+            "button_link": "",
+            "btn_text": ""
+          }
+        },
+        "68d7c99b-3395-40b6-a73c-682526ed97a7": {
+          "type": "Image",
+          "settings": {
+            "pro_img": "shopify://shop_images/DSC01701c_7f8a46fa-b106-4396-80e4-b1520cab943c.jpg",
+            "pro_title": "",
+            "button_link": "",
+            "btn_text": ""
+          }
+        },
+        "cd8d9153-2a4d-4cd6-888b-b7580b416c11": {
+          "type": "Image",
+          "settings": {
+            "pro_img": "shopify://shop_images/DSC00789c_050359a7-9db0-4c81-977e-ab4d009085e1.jpg",
+            "pro_title": "",
+            "button_link": "",
+            "btn_text": ""
+          }
+        },
+        "27ea1be0-c27d-4d23-b183-b2631db21831": {
+          "type": "Image",
+          "settings": {
+            "pro_img": "shopify://shop_images/DSC00012_3_3a1542ab-365c-4d4b-b6c4-9d26874158a8.jpg",
+            "pro_title": "",
+            "button_link": "",
+            "btn_text": ""
+          }
+        },
+        "05dbfde9-d599-45c7-88bd-90116bd30010": {
+          "type": "Image",
+          "settings": {
+            "pro_img": "shopify://shop_images/DSC05381_4762c525-be30-4cb4-9308-f06fe814b46a.jpg",
+            "pro_title": "",
+            "button_link": "",
+            "btn_text": ""
+          }
+        },
+        "4f61a7cb-d2c9-467f-9022-f51401ff3b1a": {
+          "type": "Image",
+          "settings": {
+            "pro_img": "shopify://shop_images/DSC01871_6587910e-dd62-4c78-9547-1d7972b62aa1.jpg",
+            "pro_title": "",
+            "button_link": "",
+            "btn_text": ""
+          }
+        },
+        "554085a1-365c-44c1-b7ab-ad3d082b012d": {
+          "type": "Image",
+          "settings": {
+            "pro_img": "shopify://shop_images/DSC044202_-_Copy_ab81ac29-fe72-4a51-8877-447787b39536.jpg",
+            "pro_title": "",
+            "button_link": "",
+            "btn_text": ""
+          }
+        },
+        "30f00166-90d4-4ea6-a9c2-85f08dd8fb53": {
+          "type": "Image",
+          "settings": {
+            "pro_img": "shopify://shop_images/bK8yxBvE.webp",
+            "pro_title": "",
+            "button_link": "",
+            "btn_text": ""
+          }
+        },
+        "0984e0ac-e111-4fb6-b385-d157ce902e70": {
+          "type": "Image",
+          "settings": {
+            "pro_img": "shopify://shop_images/305392527_1036720333684605_2767807138281934488_n_18073290175315503_009e21a4-8c71-4f69-877c-29798cc9e3c8.jpg",
+            "pro_title": "",
+            "button_link": "",
+            "btn_text": ""
+          }
+        },
+        "9ef4702f-3eb0-440a-ab9e-8474ef663fbb": {
+          "type": "Image",
+          "settings": {
+            "pro_img": "shopify://shop_images/zzz305541986_185825070527305_718307669298769360_n_18002480647484573_ccb28957-c225-4a97-bfd9-050307ea4a15.jpg",
+            "pro_title": "",
+            "button_link": "",
+            "btn_text": ""
+          }
+        },
+        "82c03a40-ce02-4b30-9545-e03976b5ffa5": {
+          "type": "Image",
+          "settings": {
+            "pro_img": "shopify://shop_images/244691909_1387516181645968_8156086547355634765_n_17928755011823644_bfad8062-4380-4b37-b1e5-c2b71d6bab6e.jpg",
+            "pro_title": "",
+            "button_link": "",
+            "btn_text": ""
+          }
+        },
+        "f4512d8d-7a12-42f4-a9d5-446fef12e870": {
+          "type": "Image",
+          "settings": {
+            "pro_img": "shopify://shop_images/2016.08.30-3_9692fc65-98ab-4fbb-bf51-542dbb5526ac.jpg",
+            "pro_title": "",
+            "button_link": "",
+            "btn_text": ""
+          }
+        },
+        "003df6c3-ae1c-466d-b16e-0d7a52c243c0": {
+          "type": "Image",
+          "settings": {
+            "pro_img": "shopify://shop_images/2016.05.18_697b4e48-f62e-4cfa-98da-9dce513f3e10.jpg",
+            "pro_title": "",
+            "button_link": "",
+            "btn_text": ""
+          }
+        },
+        "ee118aff-f0da-4a45-bd17-a03283cffebb": {
+          "type": "Image",
+          "settings": {
+            "pro_img": "shopify://shop_images/5275bi_bfbe2724-cbc9-401c-8e8b-3c11293a8c64.jpg",
+            "pro_title": "",
+            "button_link": "",
+            "btn_text": ""
+          }
+        },
+        "10b4cf88-80bd-430c-9592-331a24ceb9a2": {
+          "type": "Image",
+          "settings": {
+            "pro_img": "shopify://shop_images/5275di_72f6262b-19a4-411b-8ed8-6c057fa02901.jpg",
+            "pro_title": "",
+            "button_link": "",
+            "btn_text": ""
+          }
+        },
+        "3962b8ee-9c94-40aa-bbe7-065525ada6f6": {
+          "type": "Image",
+          "settings": {
+            "pro_img": "shopify://shop_images/18962bi_09dd3253-0b86-4a5e-a16f-196e0c45b2c3.jpg",
+            "pro_title": "",
+            "button_link": "",
+            "btn_text": ""
+          }
+        },
+        "1cfe4bc7-52cc-48b6-8560-feb6e4acf358": {
+          "type": "Image",
+          "disabled": true,
+          "settings": {
+            "pro_img": "shopify://shop_images/15938bi.jpg",
+            "pro_title": "",
+            "button_link": "",
+            "btn_text": ""
+          }
+        },
+        "26ace1ef-e5c2-43f0-b9e1-9c091d155cde": {
+          "type": "Image",
+          "disabled": true,
+          "settings": {
+            "pro_img": "shopify://shop_images/16456di.jpg",
+            "pro_title": "",
+            "button_link": "",
+            "btn_text": ""
+          }
+        },
+        "597ee9ba-fed1-4914-86d3-be3a764a1a4a": {
+          "type": "Image",
+          "disabled": true,
+          "settings": {
+            "pro_img": "shopify://shop_images/zzzznecklace.jpg",
+            "pro_title": "",
+            "button_link": "",
+            "btn_text": ""
+          }
+        },
+        "a0a7eaa0-6ce3-477d-8815-db48c2e7d197": {
+          "type": "Image",
+          "disabled": true,
+          "settings": {
+            "pro_img": "shopify://shop_images/0gyOcMo0.jpg",
+            "pro_title": "",
+            "button_link": "",
+            "btn_text": ""
+          }
+        },
+        "b6554fff-717e-40b1-8c41-c8f4a040a481": {
+          "type": "Image",
+          "disabled": true,
+          "settings": {
+            "pro_img": "shopify://shop_images/5JGR9HxI.jpg",
+            "pro_title": "",
+            "button_link": "",
+            "btn_text": ""
+          }
+        }
+      },
+      "block_order": [
+        "63eeb5db-afd6-4cd5-8515-ff73ed1149e1",
+        "1440dbbd-5226-49bf-a283-d62025d1a651",
+        "8f619ed8-89f1-41c1-a621-a32b4045c143",
+        "a81e1f11-41be-4605-9291-008451826e86",
+        "0ba57f15-02c8-40cc-9cbe-357e0ccf8dca",
+        "731e0db3-0ccc-40b8-a0cb-50bc7319b825",
+        "41d30773-efc8-4b60-aefa-df0232e80af5",
+        "68d7c99b-3395-40b6-a73c-682526ed97a7",
+        "cd8d9153-2a4d-4cd6-888b-b7580b416c11",
+        "27ea1be0-c27d-4d23-b183-b2631db21831",
+        "05dbfde9-d599-45c7-88bd-90116bd30010",
+        "4f61a7cb-d2c9-467f-9022-f51401ff3b1a",
+        "554085a1-365c-44c1-b7ab-ad3d082b012d",
+        "30f00166-90d4-4ea6-a9c2-85f08dd8fb53",
+        "0984e0ac-e111-4fb6-b385-d157ce902e70",
+        "9ef4702f-3eb0-440a-ab9e-8474ef663fbb",
+        "82c03a40-ce02-4b30-9545-e03976b5ffa5",
+        "f4512d8d-7a12-42f4-a9d5-446fef12e870",
+        "003df6c3-ae1c-466d-b16e-0d7a52c243c0",
+        "ee118aff-f0da-4a45-bd17-a03283cffebb",
+        "10b4cf88-80bd-430c-9592-331a24ceb9a2",
+        "3962b8ee-9c94-40aa-bbe7-065525ada6f6",
+        "1cfe4bc7-52cc-48b6-8560-feb6e4acf358",
+        "26ace1ef-e5c2-43f0-b9e1-9c091d155cde",
+        "597ee9ba-fed1-4914-86d3-be3a764a1a4a",
+        "a0a7eaa0-6ce3-477d-8815-db48c2e7d197",
+        "b6554fff-717e-40b1-8c41-c8f4a040a481"
+      ],
+      "custom_css": [],
+      "settings": {
+        "css_class": "lookbook-slider"
+      }
+    }
+  },
+  "order": [
+    "8181dd21-67e7-423a-8e79-5103218771fe"
+  ]
+}

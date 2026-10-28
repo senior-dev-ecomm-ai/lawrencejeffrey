@@ -1,0 +1,27 @@
+{% comment %}
+    Renders a product card
+
+    Accepts:
+    - product_card_product: {Object} Product Liquid object (optional)
+    - media_size: {String} Size of the product image card. Values are "square" and "portrait". Default is "square" (optional)
+    - show_secondary_image: {Boolean} Show the secondary image on hover. Default: false (optional)
+    - add_image_padding: {Boolean} Enables padding on the image to space out the grid
+    - show_vendor: {Boolean} Show the product vendor. Default: false
+    - show_image_outline: {Boolean} Show card outline. Default: true (optional)
+
+    Usage:
+    {% render 'product-card', show_vendor: section.settings.show_vendor %}
+{% endcomment %}
+
+
+
+{% comment %}<div class="media media--transparent media--{{ media_size }}">{% endcomment %}
+
+
+
+<div class="non-product-image">
+    <img src="{{ collection.image |  img_url: 'master' }}"
+         alt="Collection"
+         loading="lazy"
+         class="motion-reduce">
+</div>

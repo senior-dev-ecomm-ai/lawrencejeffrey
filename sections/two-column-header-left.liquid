@@ -1,0 +1,35 @@
+
+<div class="two-column-text-section home-row header-left not-mobile">
+    <div class="two-column-header">
+        {{ section.settings.header }}
+    </div>
+    <div class="two-column-text">
+        {{ section.settings.text }}
+    </div>
+</div>
+
+{% schema %}
+{
+"name": "Two Column, Header Left",
+"settings": [
+{
+"id": "header",
+"type": "text",
+"label": "Row Header",
+"default": "Lawrence Jeffrey"
+},
+{
+"id": "text",
+"type": "richtext",
+"label": "Add custom text below",
+"default": "<p>Add your text here</p>"
+}
+],
+"presets": [
+{
+"name": "Header Left",
+"category": "Custom"
+}
+]
+}
+{% endschema %}

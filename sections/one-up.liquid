@@ -1,0 +1,52 @@
+<div class="{{ section.settings.add_class }} one-up home-row {% if section.settings.display_on_mobile != true %}not-mobile{% endif %}">
+<div class="one-up-photo">
+  {%- if section.settings.image != blank -%}
+    {%- if section.settings.link != blank -%}
+    <a href="{{ section.settings.link }}">
+    {% endif %}
+      <img src="{{ section.settings.image | image_url: width: 1500 }}"
+           alt="{{ section.settings.image.alt | escape }}"
+           loading="lazy">
+    {%- if section.settings.link != blank -%}
+    </a>
+    {% endif %}
+  {%- else -%}
+      {{ 'image' | placeholder_svg_tag: 'placeholder-svg' }}
+  {%- endif -%}
+    </div>
+</div>
+
+{% schema %}
+  {
+    "name": "One-Up Images",
+    "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Image"
+        },
+        {
+          "type": "url",
+          "id": "link",
+          "label": "Link URL"
+        },
+        {
+          "type": "checkbox",
+          "id": "display_on_mobile",
+          "default": true,
+          "label": "Display on Mobile"
+        },
+        {
+          "type": "text",
+          "id": "add_class",
+          "label": "Section Class"
+        }
+    ],
+    "presets": [
+      {
+        "name": "One-Up",
+        "category": "Custom"
+      }
+    ]
+  }
+{% endschema %}

@@ -1,0 +1,190 @@
+{{ 'component-cart.css' | asset_url | stylesheet_tag }}
+{{ 'component-cart-items.css' | asset_url | stylesheet_tag }}
+{{ 'component-totals.css' | asset_url | stylesheet_tag }}
+{{ 'component-price.css' | asset_url | stylesheet_tag }}
+{{ 'component-discounts.css' | asset_url | stylesheet_tag }}
+{{ 'component-loading-overlay.css' | asset_url | stylesheet_tag }}
+
+<script src="{{ 'cart.js' | asset_url }}" defer="defer"></script>
+
+<cart-items class="cart-page-blocks page-width{% if cart == empty %} is-empty{% endif %}">
+  <div class="title-wrapper-with-link-top">
+    <h2 class="title title--primary">My Cart</h2>
+    <span class="follow-your-heart">Follow Your Heart</span>
+  </div>
+
+  <div class="cart__warnings">
+    <h3 class="cart__empty-text">Your Cart is Empty</h3>
+    <a href="/collections/jewelry" class="button">
+      <button class="continue-shoping">{{ 'general.continue_shopping' | t }}</button>
+    </a>
+
+    {%- if shop.customer_accounts_enabled -%}
+      <h3 class="cart__login-title">{{ 'sections.cart.login.title' | t }}</h3>
+      <p class="cart__login-paragraph">
+        {{ 'sections.cart.login.paragraph_html' | t: link: routes.account_login_url }}
+      </p>
+      <a class="mobile-login-btn" href="/account/login">Login</a>
+    {%- endif -%}
+  </div>
+
+  <form action="{{ routes.cart_url }}" class="cart__contents critical-hidden" method="post" id="cart">
+    <div class="cart__items" id="main-cart-items" data-id="{{ section.id }}">
+      <div class="js-contents">
+        {%- if cart != empty -%}
+        
+        <div class="cart-items-container">
+           <table class="cart-items">
+
+            <tbody>
+              {%- for item in cart.items -%}
+                <tr class="cart-item" id="CartItem-{{ item.index | plus: 1 }}">
+                  <td class="cart-item__media">
+                    
+                      {% if item.image %}
+                       <a href="{{ item.product.url }}">
+                        <img class="cart-item__image"
+                          src="{{ item.image | img_url: '150x' }}"
+                          alt="{{ item.image.alt | escape }}"
+                          loading="lazy"
+                          width="75"
+                          height="{{ 75 | divided_by: item.image.aspect_ratio | ceil }}"
+                        >
+                       </a>
+                      {% endif %}
+                  
+                  </td>
+                  
+                  <td class="cart-item__details">
+                    {%- if section.settings.show_vendor -%}
+                      <p class="caption-with-letter-spacing light">{{ item.product.vendor }}</p>
+                    {%- endif -%}
+                    <span >
+          				{%- assign current_variant = item.product.selected_or_first_available_variant -%}
+          				<b>inv. #{{ current_variant.sku }}</b>
+        			</span>
+                    <a href="{{ item.product.url }}" style="margin: 0;" class="cart-item__name break">{{ item.product.title | escape }}</a>
+
+                    {%- if item.product.has_only_default_variant == false or item.properties.size != 0 or item.selling_plan_allocation != nil -%}
+                      <dl>
+                        {%- if item.product.has_only_default_variant == false -%}
+                          {%- for option in item.options_with_values -%}
+                            <div class="product-option">
+                              <dt>{{ option.name }}: </dt>
+                              <dd>{{ option.value }}</dd>
+                            </div>
+                          {%- endfor -%}
+                        {%- endif -%}
+
+                        {%- for property in item.properties -%}
+                          {%- assign property_first_char = property.first | slice: 0 -%}
+                          {%- if property.last != blank and property_first_char != '_' -%}
+                            <div class="product-option">
+                              <dt>{{ property.first }}: </dt>
+                              <dd>
+                                {%- if property.last contains '/uploads/' -%}
+                                  <a href="{{ property.last }}" target="_blank">
+                                    {{ property.last | split: '/' | last }}
+                                  </a>
+                                {%- else -%}
+                                  {{ property.last }}
+                                {%- endif -%}
+                              </dd>
+                            </div>
+                          {%- endif -%}
+                        {%- endfor -%}
+                      </dl>
+
+                      <p class="product-option">{{ item.selling_plan_allocation.selling_plan.name }}</p>
+                    {%- endif -%}
+
+                    <ul class="discounts list-unstyled" role="list" aria-label="{{ 'customer.order.discount' | t }}">
+                      {%- for discount in item.discounts -%}
+                        <li class="discounts__discount">
+                          {%- render 'icon-discount' -%}
+                          {{ discount.title }}
+                        </li>
+                      {%- endfor -%}
+                    </ul>
+                  </td>
+                  <td class="cart-item__remove">
+                    <a style="color: #ff8120;" href="{{ item.url_to_remove }}" aria-label="{{ 'sections.cart.remove_title' | t: title: item.title }}">
+                        Remove Item
+                    </a>
+                  </td>
+                  <td class="cart-item__totals">
+                    <div class="cart-item__price-wrapper medium-up">
+                      {%- if item.original_line_price != item.final_line_price -%}
+                        <dl class="cart-item__discounted-prices">
+                          <dt class="visually-hidden">
+                            {{ 'products.product.price.sale_price' | t }}
+                          </dt>
+                          <dd class="price">
+                            <span data-item-key='{{ item.key }}' class='revy-final-item-price'>{{ item.final_line_price | money }}</span>
+                          </dd>
+                        </dl>
+                      {%- else -%}
+                        <span class="price price--end">
+                          <span data-item-key='{{ item.key }}' class='revy-final-item-price'>{{ item.original_line_price | money }}</span>
+                        </span>
+                      {%- endif -%}
+                    </div>
+                  </td>
+                </tr>
+              {%- endfor -%}
+            </tbody>
+          </table>
+        </div>
+         
+          <div class="title-wrapper-with-link">
+          
+            <a class="not-yet-done-mobile" href="/collections/jewelry"><span class="need-help">Not yet done? Take me back to Shopping ></span></a>
+          
+            <div class="need-help-mobile"><a class="help_mobile" href="/pages/contact-us"><span class="need-help">Need Help?</span></a>
+              	<button type="submit" class="cart_checkout_button" name="checkout"{% if cart == empty %} disabled{% endif %} form="cart">
+                  Proceed to Checkout
+            	</button>
+            </div>
+            
+          </div>
+          
+        {%- endif -%}
+      </div>
+    </div>
+
+    <p class="visually-hidden" id="cart-live-region-text" aria-live="polite" role="status"></p>
+    <p class="visually-hidden" id="shopping-cart-line-item-status" aria-live="polite" aria-hidden="true" role="status">{{ 'accessibility.loading' | t }}</p>
+  </form>
+</cart-items>
+
+
+
+{% assign includeRingsCollection = false %}
+{%- for item in cart.items -%}
+  {% for collection in item.product.collections %}    
+    {% if collection.title contains 'Rings' %}
+      {% assign includeRingsCollection = true %}
+      {% break %}        
+    {% endif %}    
+  {% endfor %}
+{% endfor %}
+{% if includeRingsCollection %}
+  <div class="ring-size">
+    <span>Ring Sizing: Please call for a quote if you need your ring sized.</span>
+  </div>
+{% endif %}
+
+
+{% schema %}
+{
+  "name": "t:sections.main-cart-items.name",
+  "settings": [
+    {
+      "type": "checkbox",
+      "id": "show_vendor",
+      "default": false,
+      "label": "t:sections.main-cart-items.settings.show_vendor.label"
+    }
+  ]
+}
+{% endschema %}

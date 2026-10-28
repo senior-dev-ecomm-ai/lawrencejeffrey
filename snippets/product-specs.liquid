@@ -1,0 +1,284 @@
+{% if product.metafields.my_fields.size > 0 %}
+<div class="product-specs blue_blocks">
+  
+  {% if product.metafields.my_fields.condition != blank %}
+    <div class="specs-entry_details">
+        <span class="spec-name">
+            Condition:
+        </span>
+            <span class="spec-value">
+                {{ product.metafields.my_fields.condition }}
+            </span>
+    </div>
+  {% endif %}
+   
+  {% if product.metafields.my_fields.restoration != blank %}
+    <div class="specs-entry_details">
+        <span class="spec-name">
+            Restoration:
+        </span>
+        <span class="spec-value">
+            {{ product.metafields.my_fields.restoration }}
+        </span>
+    </div>
+  {% endif %}
+  
+  {% if product.metafields.my_fields.circa != blank %}
+    <div class="specs-entry_details">
+        <span class="spec-name">
+            Circa:
+        </span>
+        <span class="spec-value">
+            {{ product.metafields.my_fields.circa }}
+        </span>
+    </div>
+  {% endif %}
+  
+  {% if product.metafields.my_fields.period != blank %}
+    <div class="specs-entry_details">
+        <span class="spec-name">
+            Period:
+        </span>
+        <span class="spec-value">
+            {{ product.metafields.my_fields.period }}
+        </span>
+    </div>
+  {% endif %}
+  
+  {% if product.metafields.my_fields.country != blank %}
+    <div class="specs-entry_details">
+        <span class="spec-name">
+            Country:
+        </span>
+        <span class="spec-value">
+            {{ product.metafields.my_fields.country }}
+        </span>
+    </div>
+  {% endif %}
+  
+  {% if product.metafields.my_fields.manufacturer != blank %}
+    <div class="specs-entry_details">
+        <span class="spec-name">
+            Manufacturer:
+        </span>
+        <span class="spec-value">
+            {{ product.metafields.my_fields.manufacturer }}
+        </span>
+    </div>
+  {% endif %}
+  
+  {% if product.metafields.my_fields.artist != blank %}
+    <div class="specs-entry_details">
+        <span class="spec-name">
+            Artist:
+        </span>
+        <span class="spec-value">
+            {{ product.metafields.my_fields.artist }}
+        </span>
+    </div>
+  {% endif %}
+  
+  {% if product.metafields.my_fields.designer != blank %}
+    <div class="specs-entry_details">
+        <span class="spec-name">
+            Designer:
+        </span>
+        <span class="spec-value">
+            {{ product.metafields.my_fields.designer }}
+        </span>
+    </div>
+  {% endif %}
+  
+  {% if product.metafields.my_fields.materials != blank %}
+    <div class="specs-entry_details">
+        <span class="spec-name">
+            Materials:
+        </span>
+        <span class="spec-value">
+            {{ product.metafields.my_fields.materials }}
+        </span>
+    </div>
+  {% endif %}
+  
+  {% if product.metafields.my_fields.marks != blank %}
+    <div class="specs-entry_details">
+        <span class="spec-name">
+            Marks:
+        </span>
+        <span class="spec-value">
+            {{ product.metafields.my_fields.marks }}
+        </span>
+    </div>
+  {% endif %}
+  
+  {% if product.metafields.my_fields.signature != blank %}
+    <div class="specs-entry_details">
+        <span class="spec-name">
+            Signature:
+        </span>
+        <span class="spec-value">
+            {{ product.metafields.my_fields.signature }}
+        </span>
+    </div>
+  {% endif %}
+  
+  {% if product.metafields.my_fields.period != blank %}
+    <div class="specs-entry_details">
+        <span class="spec-name">
+            Period:
+        </span>
+        <span class="spec-value">
+            {{ product.metafields.my_fields.period }}
+        </span>
+    </div>
+  {% endif %}
+  
+  {% if product.metafields.my_fields.ring_size != blank %}
+    <div class="specs-entry_details">
+        <span class="spec-name">
+            Ring Size:
+        </span>
+        <span class="spec-value">
+            {{ product.metafields.my_fields.ring_size }}
+        </span>
+    </div>
+  {% endif %}
+
+  {% comment %}
+  {% if product.metafields.my_fields.weight.value != blank %}
+    <div class="specs-entry_details">
+        <span class="spec-name">
+            Weight:
+        </span>
+        <span class="spec-value">
+            {{ product.metafields.my_fields.weight.value }}
+            {{ product.metafields.my_fields.weight.unit }}
+        </span>
+    </div>
+  {% endif %}
+  {% endcomment %}
+  
+  {% if product.metafields.custom.weight_text != blank %}
+    <div class="specs-entry_details selected-weight">
+        <span class="spec-name">
+          Weight:
+        </span>
+        <span class="spec-value">
+            {{ product.metafields.custom.weight_text }} {{ product.metafields.custom.changed_weight.value }}
+        </span>
+    </div>
+  {% endif %}
+  
+  {% if product.metafields.my_fields.dimentions != blank %}
+    <div class="specs-entry_details">
+        <span class="spec-name">
+            Dimentions:
+        </span>
+        <span class="spec-value">
+            {{ product.metafields.my_fields.dimentions }}
+        </span>
+    </div>
+  {% endif %}
+  
+  {% if product.metafields.my_fields.stones != blank %}
+    <div class="specs-entry_details">
+        <span class="spec-name">
+            Stones:
+        </span>
+        <span class="spec-value">
+            {{ product.metafields.my_fields.stones }}
+        </span>
+    </div>
+  {% endif %}
+  
+  {% if product.metafields.my_fields.stone_dimentions != blank %}
+    <div class="specs-entry_details">
+        <span class="spec-name">
+            Stone Dimentions:
+        </span>
+        <span class="spec-value">
+            {{ product.metafields.my_fields.stone_dimentions }}
+        </span>
+    </div>
+  {% endif %}
+  
+  {% if product.metafields.my_fields.hallmarks != blank %}
+    <div class="specs-entry_details">
+        <span class="spec-name">
+            Hallmarks:
+        </span>
+        <span class="spec-value">
+            {{ product.metafields.my_fields.hallmarks }}
+        </span>
+    </div>
+  {% endif %}
+
+  {% if product.metafields.custom.signature != blank %}
+    <div class="specs-entry_details">
+        <span class="spec-name">
+            Signature:
+        </span>
+        <span class="spec-value">
+            {{ product.metafields.custom.signature }}
+        </span>
+    </div>
+  {% endif %}
+  
+  {% if product.metafields.my_fields.measurements != blank %}
+    <div class="specs-entry_details">
+        <span class="spec-name">
+            Measurements:
+        </span>
+        <span class="spec-value">
+            {{ product.metafields.my_fields.measurements }}
+        </span>
+    </div>
+  {% endif %}
+  
+  {% if product.metafields.my_fields.gemstone_report != blank %}
+    <div class="specs-entry_details">
+        <span class="spec-name">
+            Gemstone Report:
+        </span>
+        <span class="spec-value">
+            {{ product.metafields.my_fields.gemstone_report }}
+        </span>
+    </div>
+  {% endif %}
+  
+  {% if product.metafields.my_fields.labreport != blank %}
+    <div class="specs-entry_details">
+        <span class="spec-name">
+            Lab Report:
+        </span>
+        <span class="spec-value">
+            {{ product.metafields.my_fields.labreport }}
+        </span>
+    </div>
+  {% endif %}
+  
+  {% if product.metafields.my_fields.document != blank %}
+    <div class="specs-entry_details">
+        <span class="spec-name">
+            Document:
+        </span>
+        <span class="spec-value">
+            {{ product.metafields.my_fields.document }}
+        </span>
+    </div>
+  {% endif %}
+  
+  {% if product.metafields.my_fields.certificates != blank %}
+    <div class="specs-entry_details">
+        <span class="spec-name">
+            Certificates:
+        </span>
+        <span class="spec-value">
+            {{ product.metafields.my_fields.certificates }}
+        </span>
+    </div>
+  {% endif %}
+
+    
+</div>
+{% endif %}

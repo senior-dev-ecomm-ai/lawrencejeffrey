@@ -1,0 +1,77 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "banner": {
+      "type": "main-collection-banner",
+      "settings": {}
+    },
+    "product-grid": {
+      "type": "main-collection-product-grid",
+      "blocks": {
+        "c137b0f0-3975-41e7-8e81-13d1da7cbf12": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/2018.07.12_9c798a45-32cf-4e13-9ebc-69693dff7d72.jpg",
+            "row_placement": 4,
+            "column_placement": 4,
+            "double_width": false,
+            "double_height": false,
+            "row_placement_1": 10,
+            "column_placement_1": 1,
+            "double_width_1": false,
+            "double_height_1": false
+          }
+        },
+        "2e9ff8b9-180c-4d71-8671-87c91dfc0851": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/zzzzzzzzzz2015.08.12_3940240f-e895-4fed-86a3-f527b3baa97e.jpg",
+            "row_placement": 6,
+            "column_placement": 1,
+            "double_width": true,
+            "double_height": true,
+            "row_placement_1": 10,
+            "column_placement_1": 1,
+            "double_width_1": false,
+            "double_height_1": false
+          }
+        },
+        "43bcdfce-b220-4eba-bc7f-a4837b5de540": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/130905491_184918676672887_2191561958723850803_n_17843825849497996_copy.jpg",
+            "row_placement": 8,
+            "column_placement": 4,
+            "double_width": false,
+            "double_height": false,
+            "row_placement_1": 10,
+            "column_placement_1": 1,
+            "double_width_1": false,
+            "double_height_1": false
+          }
+        }
+      },
+      "block_order": [
+        "c137b0f0-3975-41e7-8e81-13d1da7cbf12",
+        "2e9ff8b9-180c-4d71-8671-87c91dfc0851",
+        "43bcdfce-b220-4eba-bc7f-a4837b5de540"
+      ],
+      "settings": {
+        "products_per_page": 88,
+        "tag_line": "Less is more...and more is more."
+      }
+    }
+  },
+  "order": [
+    "banner",
+    "product-grid"
+  ]
+}

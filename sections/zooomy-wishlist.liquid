@@ -1,0 +1,51 @@
+{% comment %} 
+<link rel="stylesheet" href="{{ 'section-zooomy-wishlist.css' | asset_url }}" media="print" onload="this.media='all'">
+{% endcomment %}
+
+<link rel="stylesheet" href="{{ 'component-rte.css' | asset_url }}" media="print" onload="this.media='all'">
+
+{% comment %}
+<noscript>{{ 'section-zooomy-wishlist.css' | asset_url | stylesheet_tag }}</noscript>
+{% endcomment %}
+
+<noscript>{{ 'component-rte.css' | asset_url | stylesheet_tag }}</noscript>
+
+<div class="wishes_sections" style="min-height: 100vh;">
+  <span class="wishes">Wishes</span>
+  <div class="rte wishes_content">
+   {{page.content}} 
+    
+    <div  id='ZoomyWishlistPage'></div>
+    <script src='{{ 'ListWishlist.js' | asset_url }}'
+      data-shop-id='{{shop.permanent_domain}}' 
+      data-customer-id='{{customer.id}}' 
+      data-customer-email='{{customer.email}}' >      
+    </script>
+
+  </div>
+</div>
+
+<script>
+  function numberWithCommas(x) {
+    return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+  }
+  const checkPriceItemsLoading = setInterval(function(){
+    if(document.querySelector("#ZoomyWishlistPage .zprice")) {      
+      document.querySelectorAll("#ZoomyWishlistPage .zprice").forEach(priceItem => {
+        const priceContent = priceItem.textContent;          
+        if(parseInt(priceContent.replaceAll('$ ', '')) == 0) {
+          priceItem.classList.add('hide');
+        }
+        priceItem.textContent = `$ ${ numberWithCommas(parseFloat(priceContent.replace('$ ', '')).toFixed(2)) }`;
+      })
+      clearInterval(checkPriceItemsLoading);
+    }
+  }, 2000);
+</script>
+{% schema %}
+{
+  "name": "t:sections.zooomy-wishlist.name",
+  "tag": "section",
+  "class": "spaced-section"
+}
+{% endschema %}

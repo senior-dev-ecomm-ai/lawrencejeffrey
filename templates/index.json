@@ -1,0 +1,114 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "1629247903c80a0b32": {
+      "type": "two-up",
+      "custom_css": [
+        "a:link,a:visited {cursor: default;}"
+      ],
+      "settings": {
+        "image-left": "shopify://shop_images/bracelet-and-motorcycle.jpg",
+        "link-left": "#",
+        "image-right": "shopify://shop_images/champagne-and-strawberries.jpg",
+        "link-right": "#"
+      }
+    },
+    "1629247958d5c7d68b": {
+      "type": "four-up",
+      "custom_css": [],
+      "settings": {
+        "image-first": "shopify://shop_images/26315ai.jpg",
+        "link-first": "https://lawrencejeffrey.com/products/seaman-schepps-multi-stone-hoop-earrings",
+        "image-second": "shopify://shop_images/26854ci_c8c24f8a-6385-4f7e-944a-5e8ee09172c1.jpg",
+        "link-second": "https://lawrencejeffrey.com/products/antique-french-snake-bracelet",
+        "image-third": "shopify://shop_images/26868ai.jpg",
+        "link-third": "https://lawrencejeffrey.com/products/modernist-opal-brooch-by-paul-binder",
+        "image-fourth": "shopify://shop_images/26805ai_3e3f04f6-b23f-4b72-99ed-d0cab57b39ac.jpg",
+        "link-fourth": "https://lawrencejeffrey.com/products/26805-swiss-modernist-sixties-rings"
+      }
+    },
+    "162924791984926003": {
+      "type": "one-up",
+      "custom_css": [],
+      "settings": {
+        "image": "shopify://shop_images/home-jewelry-display.jpg",
+        "link": "shopify://collections/signed-jewelry",
+        "display_on_mobile": false,
+        "add_class": ""
+      }
+    },
+    "1629576572e31f410d": {
+      "type": "two-column-text-and-header",
+      "custom_css": [],
+      "settings": {
+        "header": "",
+        "image": "shopify://shop_images/ljj-logo.png",
+        "text": "<div class=\"description\">Timeless, chic, stylish, fashionable, unique, elegant, casual, glamorous.<br>\nEvery piece of jewelry vetted for quality, authenticity, and condition.<br>\nNo questions asked return policy and free shipping with insurance.<br>\nVisit us at our gallery in Litchfield, Connecticut or shop online anytime.\n</div>",
+        "header_side": "left"
+      }
+    },
+    "1629248323623be576": {
+      "type": "three-up",
+      "settings": {
+        "image-first": "shopify://shop_images/qUfu6tQm_b09b4536-77c1-45f7-9707-5356f611adbc.jpg",
+        "link-first": "",
+        "image-second": "shopify://shop_images/1IMG_8466cc.jpg",
+        "link-second": "",
+        "image-third": "shopify://shop_images/W3aeib6Y.jpg",
+        "link-third": ""
+      }
+    },
+    "162940716364822085": {
+      "type": "footer-buttons",
+      "settings": {}
+    },
+    "3f9df2b3-df51-4a20-ad5d-fdd1a2c1f374": {
+      "type": "schedule-event",
+      "custom_css": [],
+      "settings": {
+        "header": "SHOW SCHEDULE",
+        "img_link": "shopify://pages/shows",
+        "text": "",
+        "header_side": "right"
+      }
+    },
+    "1629577077ad23107d": {
+      "type": "two-column-text-and-header",
+      "disabled": true,
+      "settings": {
+        "header": "",
+        "image": "shopify://shop_images/Screen_Shot_2021-09-16_at_12.31.14_AM.png",
+        "text": "<div class=\"schedule-location\">Miami Beach Original Antiques Show</div>     \n    <div class=\"schedule-date\">January 6-12, 2021</div>\n  \n  <div class=\"schedule-row\">\n    <div class=\"schedule-location\">The Palm Beach Show</div>                          \n    <div class=\"schedule-date\">February 15-20, 2021</div>\n    </div>\n  <div class=\"schedule-row\">\n    <div class=\"schedule-location\">Nantucket Summer Antiques Show</div>              \n    <div class=\"schedule-date\">August 1-6, 2021</div>\n  </div>\n  <div class=\"schedule-row\">\n  <div class=\"schedule-location\">San Francisco Fall Antiques Show</div>          \n  <div class=\"schedule-date\">October 22-28, 2021</div>\n  </div>",
+        "header_side": "right"
+      }
+    },
+    "162924834083437ec6": {
+      "type": "one-up",
+      "settings": {
+        "image": "shopify://shop_images/home-city-block.jpg",
+        "link": "",
+        "display_on_mobile": true,
+        "add_class": "bottom_img"
+      }
+    }
+  },
+  "order": [
+    "1629247903c80a0b32",
+    "1629247958d5c7d68b",
+    "162924791984926003",
+    "1629576572e31f410d",
+    "1629248323623be576",
+    "162940716364822085",
+    "3f9df2b3-df51-4a20-ad5d-fdd1a2c1f374",
+    "1629577077ad23107d",
+    "162924834083437ec6"
+  ]
+}

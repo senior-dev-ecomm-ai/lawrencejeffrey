@@ -1,0 +1,34 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "disabled": true,
+      "settings": {}
+    },
+    "prive_page_template_JjHX7K": {
+      "type": "prive-page-template",
+      "custom_css": [
+        ".gallery_number {color: #0098ff; font-family: Kozuka Gothic PR6N, sans-serif;}",
+        ".gallery-price {font-family: Kozuka Gothic PR6N, sans-serif;}"
+      ],
+      "settings": {
+        "image": "shopify://shop_images/FINAL_PRIVE_big_image_1.jpg",
+        "tag_line": "<p>See it first-est... that's just before first</p>",
+        "add_class": ""
+      }
+    }
+  },
+  "order": [
+    "main",
+    "prive_page_template_JjHX7K"
+  ]
+}

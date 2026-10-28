@@ -1,0 +1,56 @@
+{% if customer %}
+  
+<section class="my_collection {{ section.settings.css_class }}">
+
+  <div class="my_title">
+   <p>My Collection <span class="style">Style Story</span> Acquisitions <span class="small">Big Fun</span></p>
+  </div>
+  
+  <div class="mycollection_product">
+    {% if customer.orders.size > 0 %}
+    {% for order in customer.orders %}
+      {% for item in order.line_items  %}
+        <div class="customer_items">
+          <div class="item_img"><img src="{{ item.image | img_url: 'master' }}" /></div>
+          <p class="item_sku"><span>Inv.</span> <span>#{{ item.sku }}</span></p>
+          <p class="item_title"> {{ item.title }}</p>
+        </div>
+      {% endfor %}
+    {% endfor %}
+    {% else %}
+      <p class="no_purchase">You don't have any purchases yet.</p>
+    {% endif %}
+   
+  </div>
+
+</section>
+
+{% endif %}
+
+
+{% schema %}
+  {
+  "name": "My Collection Page",
+  "class": "shopify-section--image-with-text-overlay",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Advanced"
+    },
+    {
+      "type": "text",
+      "id": "css_class",
+      "label": "CSS Class"
+    }
+  ],
+  "presets": [
+    {
+      "name": "My Collection Page"        
+    }
+  ],
+  "templates": [
+     "page"
+  ]
+}
+{% endschema %}
+

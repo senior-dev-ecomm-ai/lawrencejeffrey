@@ -1,0 +1,114 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "banner": {
+      "type": "main-collection-banner",
+      "custom_css": [],
+      "settings": {}
+    },
+    "product-grid": {
+      "type": "object-archive-collection",
+      "blocks": {
+        "c137b0f0-3975-41e7-8e81-13d1da7cbf12": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/IMG_2064_1885abd4-c5d8-4c91-ad3d-aed89d79e269.jpg",
+            "row_placement": 4,
+            "column_placement": 4,
+            "double_width": false,
+            "double_height": false
+          }
+        },
+        "43bcdfce-b220-4eba-bc7f-a4837b5de540": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/122179327_631397fe-9595-4071-9c0d-42d1a774a786.jpg",
+            "row_placement": 10,
+            "column_placement": 2,
+            "double_width": false,
+            "double_height": false
+          }
+        },
+        "2e9ff8b9-180c-4d71-8671-87c91dfc0851": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/117592503_633102080954537_645226271868547391_n_18037944109263281_777aabd9-b35a-43a6-8da4-473290a28091.jpg",
+            "row_placement": 6,
+            "column_placement": 1,
+            "double_width": true,
+            "double_height": true
+          }
+        },
+        "2c147b98-5ad9-4280-afd4-e8ffa7cd30f5": {
+          "type": "image",
+          "disabled": true,
+          "settings": {
+            "image": "shopify://shop_images/inset-engagement-ring.jpg",
+            "row_placement": 12,
+            "column_placement": 2,
+            "double_width": true,
+            "double_height": true
+          }
+        },
+        "fba41b4d-b3c9-465e-8f9a-974e7766f5aa": {
+          "type": "image",
+          "disabled": true,
+          "settings": {
+            "image": "shopify://shop_images/inset-jewelry-cheeks.jpg",
+            "row_placement": 18,
+            "column_placement": 3,
+            "double_width": true,
+            "double_height": true
+          }
+        },
+        "674058ac-f847-4712-942c-05f811cc022d": {
+          "type": "image",
+          "disabled": true,
+          "settings": {
+            "image": "shopify://shop_images/inset-photoshoot.jpg",
+            "row_placement": 15,
+            "column_placement": 1,
+            "double_width": false,
+            "double_height": false
+          }
+        },
+        "05fd180b-4fc4-44d4-b191-aaa5fb4a7d47": {
+          "type": "image",
+          "disabled": true,
+          "settings": {
+            "image": "shopify://shop_images/inset-beautiful-quote.jpg",
+            "row_placement": 20,
+            "column_placement": 1,
+            "double_width": false,
+            "double_height": false
+          }
+        }
+      },
+      "block_order": [
+        "c137b0f0-3975-41e7-8e81-13d1da7cbf12",
+        "43bcdfce-b220-4eba-bc7f-a4837b5de540",
+        "2e9ff8b9-180c-4d71-8671-87c91dfc0851",
+        "2c147b98-5ad9-4280-afd4-e8ffa7cd30f5",
+        "fba41b4d-b3c9-465e-8f9a-974e7766f5aa",
+        "674058ac-f847-4712-942c-05f811cc022d",
+        "05fd180b-4fc4-44d4-b191-aaa5fb4a7d47"
+      ],
+      "settings": {
+        "products_per_page": 184,
+        "tag_line": "Less is more...and more is more."
+      }
+    }
+  },
+  "order": [
+    "banner",
+    "product-grid"
+  ]
+}

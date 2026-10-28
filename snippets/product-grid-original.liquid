@@ -1,0 +1,66 @@
+ <script>
+  	$(document).ready(function(){
+      $(".grid-item").hover(function(){
+      	$(this).find(".card-information").css("opacity","1");
+        $(this).find(".card-information-price").css("opacity","1");
+      },function(){
+      	$(this).find(".card-information").css("opacity","0");
+        $(this).find(".card-information-price").css("opacity","0");
+      });
+  });
+  
+</script> 
+
+<div id="CollectionProductGrid" class="collection_template">
+  
+  {% if collection.all_products_count > 0 %}
+    {%- paginate collection.products by section.settings.products_per_page -%}
+    <div class="collection">
+        {% render 'collection-header-mobile' %}
+
+        <div id="main-collection-product-grid" data-id="{{ section.id }}">
+            {% render 'collection-header-desktop' %}
+
+            {% assign count = 0 %}
+
+            {%- for product in collection.products -%}
+                {% assign count = count | plus: 1 %}
+
+                <div class="grid-item">
+                    {% render 'product-card', product_card_product: product, card_count: count %}
+                </div>
+            {%- endfor -%}
+      
+            <div class="grid-item double-size non-product rank-1 file-3 main_featured_col">
+                {% render 'collection-image-featured', image: collection.featured_image %}
+            </div>
+            {% for block in section.blocks %}
+               {% if block.type == 'image' %}
+                  {% if block.settings.double_width and block.settings.double_height %}
+                      <div class="grid-item double-size non-product rank-{{ block.settings.row_placement }} file-{{ block.settings.column_placement }}">
+                  {% else %}
+                    <div class="grid-item single-size non-product rank-{{ block.settings.row_placement }} file-{{ block.settings.column_placement }}">
+                  {% endif %}
+                      <div class="non-product-image">
+                      <img src="{{ block.settings.image | img_url: '1600x' }}"
+                           alt="{{ block.settings.image.alt }}"/>
+                      </div>
+                  </div>
+                 {% endif %}
+                <!-- output a header with text -->
+              {% endfor %}
+            </div>
+
+            {%- if paginate.pages > 1 -%}
+                {% render 'pagination', paginate: paginate, anchor: '' %}
+            {%- endif -%}
+        </div>
+        {%- endpaginate -%}
+    </div>
+
+  {% else %}
+  	<div class="productNotFound">
+        <p>Sorry, there are no products in this collection.</p>
+    </div>
+  {% endif %}
+</div>

@@ -1,0 +1,62 @@
+<div class="introduce-section">
+   <div class="motto">
+        <p>{{ section.settings.main_heading }}</p>
+   </div>
+  <hr>
+    <div class="staff">
+       {% for block in section.blocks %}
+      <div class="staff-member">
+      
+        <div class="staff-bio">
+            <h3>{{ block.settings.title }}</h3>
+            <p>{{ block.settings.sub_title }}</p>
+        </div>
+        <div class="staff-photo">
+            <img src="{{ block.settings.img_one | img_url: 'master' }} ">
+        </div>
+         
+      </div>
+         {% endfor %}
+    </div>
+</div>
+
+{% schema %}
+{
+  "name": "About Us Section",
+  "settings": [
+    {
+      "type": "text",
+      "id": "main_heading",
+      "label": "Main Heading"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "about_block",
+      "name": "About Block",
+      "settings": [
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Title"
+        },
+        {
+          "type": "richtext",
+          "id": "sub_title",
+          "label": "Sub Title"
+        },
+        {
+          "type": "image_picker",
+          "id": "img_one",
+          "label": "Upload Image"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "About Us Section"
+    }
+  ]
+}
+{% endschema %}

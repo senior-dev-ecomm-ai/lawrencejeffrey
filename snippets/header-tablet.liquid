@@ -1,0 +1,105 @@
+<!--suppress HtmlUnknownTarget -->
+
+<header class="ljj-header header-tablet header header--{{ section.settings.logo_position }} {% if section.settings.menu != blank %} header--has-menu{% endif %}">
+     {% if template.suffix contains "previet" %}
+       <div class="header__heading logo">
+        <a href="{{ routes.root_url }} class="logo_link">
+           <img class="main_logo" src="{{ 'JEFFREY-Logo.png' | asset_img_url:'master' }}">
+           <!-- <img class="hover_logo" src="{{ 'JEFFREY-Logo-hover.png' | asset_img_url:'master'}}"> -->
+        </a>
+      </div>
+
+  {% else %}
+    <div class="dropdown-menu">
+      <i class="fal fa-bars open-menu-button alh-icon">
+        <svg fill="#000000" width="30px" height="30px" viewBox="0 0 32 32" version="1.1" xmlns="http://www.w3.org/2000/svg">
+        <title>bars</title>
+        <path d="M2 9.249h28c0.69 0 1.25-0.56 1.25-1.25s-0.56-1.25-1.25-1.25v0h-28c-0.69 0-1.25 0.56-1.25 1.25s0.56 1.25 1.25 1.25v0zM30 14.75h-28c-0.69 0-1.25 0.56-1.25 1.25s0.56 1.25 1.25 1.25v0h28c0.69 0 1.25-0.56 1.25-1.25s-0.56-1.25-1.25-1.25v0zM30 22.75h-28c-0.69 0-1.25 0.56-1.25 1.25s0.56 1.25 1.25 1.25v0h28c0.69 0 1.25-0.56 1.25-1.25s-0.56-1.25-1.25-1.25v0z"></path>
+        </svg>
+      </i>
+      <i class="fal fa-bars close-menu-button alh-icon">
+        <svg fill="#000000" width="30px" height="30px" viewBox="0 0 32 32" version="1.1" xmlns="http://www.w3.org/2000/svg">
+        <title>bars-filter</title>
+        <path d="M30 6.749h-28c-0.69 0-1.25 0.56-1.25 1.25s0.56 1.25 1.25 1.25v0h28c0.69 0 1.25-0.56 1.25-1.25s-0.56-1.25-1.25-1.25v0zM24 14.75h-16c-0.69 0-1.25 0.56-1.25 1.25s0.56 1.25 1.25 1.25v0h16c0.69 0 1.25-0.56 1.25-1.25s-0.56-1.25-1.25-1.25v0zM19 22.75h-6.053c-0.69 0-1.25 0.56-1.25 1.25s0.56 1.25 1.25 1.25v0h6.053c0.69 0 1.25-0.56 1.25-1.25s-0.56-1.25-1.25-1.25v0z"></path>
+        </svg>
+      </i>
+    </div>
+    {% render 'site-dropdown' %}
+   <div class="header__heading logo">
+      <a {% if page.title != 'Previet' %}href="{{ routes.root_url }}"{% endif %} class="logo_link">
+         <img class="main_logo" src="{{ 'JEFFREY-Logo.png' | asset_img_url:'master' }}">
+         <img class="hover_logo" src="{{ 'JEFFREY-Logo-hover.png' | asset_img_url:'master'}}">
+      </a>
+    </div>
+
+    <nav class="categories">
+        <div class="category-button category-jewelry nav-links category-left" data-attach="dropdown-tablet.dropdown-jewelry">
+            <div class="category-text">Jewelry</div>
+        </div>
+        <div class="category-center not-mobile">
+            <div class="category-divider">&nbsp;</div>
+        </div>
+        <div class="category-button category-objets nav-links category-right"  data-attach="dropdown-tablet.dropdown-objets">
+            <div class="category-text">Objets</div>
+        </div>
+        {% render 'category-dropdown', placement: 'tablet', category: 'jewelry', links: linklists.jewelry-menu.links %}
+        {% render 'category-dropdown', placement: 'tablet', category: 'objets', links: linklists.objets-menu.links %}
+    </nav>
+
+    <div class="header__icons" style="display: none;">
+        {%- if shop.customer_accounts_enabled -%}
+            <a href="{%- if customer -%}{{ routes.account_url }}{%- else -%}{{ routes.account_login_url }}{%- endif -%}"
+               class="header__icon header__icon--account link link--text focus-inset{% if section.settings.menu != blank %} small-hide{% endif %}">
+                {% render 'icon-account' %}
+                <span class="visually-hidden">
+            {%- liquid
+                if customer
+                    echo 'customer.account_fallback' | t
+                else
+                    echo 'customer.log_in' | t
+                endif
+            -%}
+          </span>
+            </a>
+        {%- endif -%}
+        <a href="{{ routes.cart_url }}" class="header__icon header__icon--cart link link--text focus-inset"
+           id="cart-icon-bubble">
+            {%- liquid
+                if cart == empty
+                    render 'icon-cart-empty'
+                else
+                    render 'icon-cart'
+                endif
+            -%}
+            <span class="visually-hidden">{{ 'templates.cart.cart' | t }}</span>
+            {%- if cart != empty -%}
+                <div class="cart-count-bubble">
+                    {%- if cart.item_count < 100 -%}
+                        <span aria-hidden="true">{{ cart.item_count }}</span>
+                    {%- endif -%}
+                    <span class="visually-hidden">{{ 'sections.header.cart_count' | t: count: cart.item_count }}</span>
+                </div>
+            {%- endif -%}
+        </a>
+    </div>
+
+
+    <div class="mobile-links alh-mobile-links">
+        <i class="fal fa-search not-mobile search-button-tablet search-button alh-icon" data-attach="search-dropdown-tablet">
+          <svg width="30px" height="30px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M15.7955 15.8111L21 21M18 10.5C18 14.6421 14.6421 18 10.5 18C6.35786 18 3 14.6421 3 10.5C3 6.35786 6.35786 3 10.5 3C14.6421 3 18 6.35786 18 10.5Z" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </i>
+        <a href="{{ routes.cart_url }}" class="cart_icons">
+            <i class="fal fa-shopping-bag alh-icon">
+              <svg width="30px" height="30px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M9 11V6C9 4.34315 10.3431 3 12 3C13.6569 3 15 4.34315 15 6V10.9673M10.4 21H13.6C15.8402 21 16.9603 21 17.816 20.564C18.5686 20.1805 19.1805 19.5686 19.564 18.816C20 17.9603 20 16.8402 20 14.6V12.2C20 11.0799 20 10.5198 19.782 10.092C19.5903 9.71569 19.2843 9.40973 18.908 9.21799C18.4802 9 17.9201 9 16.8 9H7.2C6.0799 9 5.51984 9 5.09202 9.21799C4.71569 9.40973 4.40973 9.71569 4.21799 10.092C4 10.5198 4 11.0799 4 12.2V14.6C4 16.8402 4 17.9603 4.43597 18.816C4.81947 19.5686 5.43139 20.1805 6.18404 20.564C7.03968 21 8.15979 21 10.4 21Z" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </i>
+            <span cart-total-count class="cart_counts">{{ cart.item_count }}</span>
+        </a>
+    </div>
+       {% endif %}
+</header>
+{% render 'search-dropdown-tablet' %}
+

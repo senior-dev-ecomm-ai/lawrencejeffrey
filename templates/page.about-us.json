@@ -1,0 +1,125 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "16283821742c8ca701": {
+      "type": "intro-section",
+      "disabled": true,
+      "settings": {
+        "intro_title": "Welcome",
+        "image": "shopify://shop_images/PFIqlj6Y3.jpg",
+        "intro_text": "<p>From our humble beginnings in the seventies, we moved from flea markets and small shows, to national shows, and our first gallery in 1994. Today, Lawrence Jeffrey is located in our own historic building on the green in Litchfield Connecticut. Antique and fine 20th century jewelry is on display with Museum-quality glass, rare silver, and smalls of all kinds.</p><p></p><p>Our specialty is relational collecting. The shop is filled with the wonder of discovery. We match jewelry with the client’s fashion sense, lifestyle, and desire and our Period objets, art and furniture find relevance in contemporary settings. Perhaps most important, these pieces cause no ecological damage to our world and provide a green path to luxury.</p>",
+        "intro_motto": "welcom-about"
+      }
+    },
+    "007af761-098d-4f4b-a608-11b8cecb1939": {
+      "type": "rich-text",
+      "blocks": {
+        "6477df13-676c-4949-945a-450e117521d9": {
+          "type": "heading",
+          "settings": {
+            "heading": "Welcome",
+            "heading_size": "h0"
+          }
+        }
+      },
+      "block_order": [
+        "6477df13-676c-4949-945a-450e117521d9"
+      ],
+      "settings": {
+        "color_scheme": "background-1",
+        "full_width": true,
+        "add_class": "welcom-title"
+      }
+    },
+    "4b64b051-2348-4e0a-b966-3a6b5d1ec83a": {
+      "type": "Img-and-text",
+      "blocks": {
+        "template--16083523567805__4b64b051-2348-4e0a-b966-3a6b5d1ec83a-167711350258c3dbbd-1": {
+          "type": "text",
+          "settings": {
+            "text": "<p>From our humble beginnings in the seventies, we moved from flea markets and small shows, to national shows, and our first gallery in 1994.\nToday, Lawrence Jeffrey is located in our own historic building on the green in Litchfield Connecticut. Antique and fine 20th century jewelry is on display with Museum-quality glass, rare silver, and smalls of all kinds.</p>\n<p>Our specialty is relational collecting. The shop is filled with the wonder of discovery. We match jewelry with the client's fashion sense, lifestyle, and desire and our Period objets, art and furniture find relevance in contemporary settings. Perhaps most important, these pieces cause no ecological damage to our world and provide a green path to luxury.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "template--16083523567805__4b64b051-2348-4e0a-b966-3a6b5d1ec83a-167711350258c3dbbd-1"
+      ],
+      "settings": {
+        "image": "shopify://shop_images/PFIqlj6Y3.jpg",
+        "height": "adapt",
+        "color_scheme": "background-1",
+        "layout": "image_first",
+        "add_class": "welcom-about"
+      }
+    },
+    "main": {
+      "type": "main-about-us",
+      "blocks": {
+        "about_block_rUHMzK": {
+          "type": "about_block",
+          "settings": {
+            "title": "Sandra Russak",
+            "sub_title": "<p>Sandra's aesthetic sensibility informs and guides us in all facets of the firm. Her ability to balance personal style and connoisseurship promotes cohesiveness in client collections while encouraging passionate collecting. She and Jeff started Bradford House Antiques LLC our parent company, in 1989.</p>",
+            "img_one": "shopify://shop_images/lauren-bacall.jpg"
+          }
+        },
+        "about_block_mG7bKA": {
+          "type": "about_block",
+          "settings": {
+            "title": "Jeff Russak",
+            "sub_title": "<p>Jeff's uncompromising attitude towards quality, condition, and authenticity, directs the acquisition process. His knowledge of pre-owned luxury goods (that’s how he views period decorative arts) is underscored by an unerring sense of their relevance to modern living. His collaborative approach to the mission and vision of the Gallery creates an atmosphere where the associates and guests together can chart the course. As new trends in connoisseurship emerge, we can collect, and preserve our decorative heritage together.</p>",
+            "img_one": "shopify://shop_images/cary-grant.jpg"
+          }
+        },
+        "about_block_rQQ3cg": {
+          "type": "about_block",
+          "settings": {
+            "title": "Penny Hurley",
+            "sub_title": "<p>Has been with the gallery since 2001. A devotee of antique jewelry and a collector of female portraiture, Penny lends her unique taste and years of experience to the selection process of our jewelry. She also manages client relations and helps create the photographs you see on this site. Her positive demeanor and principled conduct guides and informs us.</p>",
+            "img_one": "shopify://shop_images/judy-garland.jpg"
+          }
+        },
+        "about_block_7GeLnn": {
+          "type": "about_block",
+          "settings": {
+            "title": "Katie Miele",
+            "sub_title": "<p>As creative director, Katie is our taste maker. Collaborating on the acquisition process, her personal style informs everything visual from photo shoots and social media to display and graphics. An expert in the history, design and fashion relevance of jewelry, our guests often seek her opinion when adding to their collection.</p>",
+            "img_one": "shopify://shop_images/grace-kelly.jpg"
+          }
+        },
+        "about_block_wfU8Eh": {
+          "type": "about_block",
+          "settings": {
+            "title": "Natalia Muscolo",
+            "sub_title": "<p>Our Information Technology specialist and photographer. You can thank her for providing us with clear and accurate pictures.</p>",
+            "img_one": "shopify://shop_images/rita-hayworth.jpg"
+          }
+        }
+      },
+      "block_order": [
+        "about_block_rUHMzK",
+        "about_block_mG7bKA",
+        "about_block_rQQ3cg",
+        "about_block_7GeLnn",
+        "about_block_wfU8Eh"
+      ],
+      "settings": {
+        "main_heading": "It is the dedication, passion, and ethics of our staff that makes Lawrence Jeffrey great."
+      }
+    }
+  },
+  "order": [
+    "16283821742c8ca701",
+    "007af761-098d-4f4b-a608-11b8cecb1939",
+    "4b64b051-2348-4e0a-b966-3a6b5d1ec83a",
+    "main"
+  ]
+}

@@ -1,0 +1,54 @@
+<header class="ljj-header header-mobile">
+    {% if template.suffix contains "previet" %}
+       <div class="logo-wrapper">
+           <a href="{{ routes.root_url }}" class="logo_link">
+             {% comment %}
+             <img class="main_logo" src="{{ 'ljj-logo.png' | asset_img_url:'master' }}">
+             <img class="hover_logo" src="{{ 'logo-hover.png' | asset_img_url:'master'}}">
+             {% endcomment %}
+             <img class="main_logo" src="{{ 'JEFFREY-Logo.png' | asset_img_url:'master' }}">
+             <img class="hover_logo" src="{{ 'JEFFREY-Logo-hover.png' | asset_img_url:'master'}}">
+            </a>
+        </div>
+       <div class="azure-rule">&nbsp;</div>
+    {% else %}
+    <div class="top-row">
+        <div class="icon-wrapper">
+           <i class="fas fa-bars open-menu-button"></i>
+            {% comment %}<i class="fal fa-bars open-menu-button"></i>{% endcomment %}
+          <i class="fas fa-times  close-menu-button"></i>
+             {% comment %}<i class="fal fa-times close-menu-button"></i>{% endcomment %}
+        </div>
+        {% render 'site-dropdown' %}
+
+        <div class="logo-wrapper">
+           <a {% if page.title != 'Previet' %}href="{{ routes.root_url }}"{% endif %} class="logo_link">
+             {% comment %}
+             <img class="main_logo" src="{{ 'ljj-logo.png' | asset_img_url:'master' }}">
+             <img class="hover_logo" src="{{ 'logo-hover.png' | asset_img_url:'master'}}">
+             {% endcomment %}
+             <img class="main_logo" src="{{ 'JEFFREY-Logo.png' | asset_img_url:'master' }}">
+             <img class="hover_logo" src="{{ 'JEFFREY-Logo-hover.png' | asset_img_url:'master'}}">
+            </a>
+        </div>
+        <div class="icon-wrapper">
+          <a href="/cart">
+            {% render 'icon-shopping-bag' %}
+           {% comment %}<i class="fal fa-shopping-bag"></i>{% endcomment %}
+            <span cart-total-count class="cart_counts">{{ cart.item_count }}</span>
+          </a>
+        </div>
+    </div>
+    <div class="azure-rule">&nbsp;</div>
+    <div class="button-row">
+        <div class="category-button category-jewelry nav-links category-right" data-attach="dropdown-mobile.dropdown-jewelry">
+            <a class="category-text">Jewelry</a>
+        </div>
+        <div class="category-button category-objets nav-links category-right" data-attach="dropdown-mobile.dropdown-objets">
+            <a class="category-text">Objets</a>
+        </div>
+        {%  render 'category-dropdown', placement: 'mobile', category: 'jewelry', links: linklists.jewelry-menu.links %}
+        {%  render 'category-dropdown', placement: 'mobile', category: 'objets', links: linklists.objets-menu.links %}
+    </div>
+      {% endif %}
+</header>

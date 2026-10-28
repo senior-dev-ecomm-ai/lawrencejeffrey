@@ -1,0 +1,59 @@
+<div class="contat-page">
+
+    <div class="top-block">
+        <div class="info-column">
+             {{ section.settings.info_column }}
+        </div>
+
+        <div class="image-column not-mobile">
+          <img src="{{ section.settings.image_right | img_url: 'master' }}">
+            <!-- {{ 'storefront.jpg' | asset_url | img_tag: "Lawrence Jeffrey Storefront" }} -->
+        </div>
+    </div>
+
+
+    <div class="lower">
+      <div class="contact-map-left">
+        <iframe src=" {{ section.settings.map_url }}" 
+              width="650" 
+              height="400" 
+              style="border:0;" 
+              allowfullscreen="" 
+              loading="lazy">
+        </iframe>
+      </div>
+      <div class="valediction fancy contact-map-right not-mobile">{{ section.settings.map_content }}</div>
+    </div>
+  	
+</div>
+
+
+
+{% schema %}
+  {
+    "name": "Main Contact-Us",
+    "settings": [
+        {
+          "type": "textarea",
+          "id": "info_column",
+          "label": "Info"
+        },
+        {
+          "type": "image_picker",
+          "id": "image_right",
+          "label": "Image Right"
+        },
+       {
+          "type": "url",
+          "id": "map_url",
+          "label": "Map Url"
+        },
+        {
+          "type": "text",
+          "id": "map_content",
+          "label": "Map Content"
+        }
+       
+    ],
+  }
+{% endschema %}

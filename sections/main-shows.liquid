@@ -1,0 +1,69 @@
+<div class="shows-page">
+  
+  <div class="shows-header">
+	  <span class="fancy" style="color: #0098ff;">Coming Attractions!</span>
+  </div>
+  
+  <div class="event-rows">
+  {% for link in linklists.bloglist.links %}
+    {% assign blog = link.object %}
+    {% for article in blog.articles %}  
+  
+      <div class="event-row">
+        <div class="event-logs">
+         {{ article.metafields.custom.post_logo_title }}
+        </div>
+        <div class="event-details">
+          <div class="event_article_content">
+            
+            <div class="left_blocks right_bks">               
+                <p>{{ article.metafields.custom.event_dates }}</p>
+                <h4>{{ article.metafields.custom.post_title }}</h4>
+                <p>{{article.metafields.custom.show_address }}</p>
+              
+            </div>
+            <div class="right_bks shows_right_blocks">
+              <div class="hours">
+                {{ article.metafields.custom.show_hours }}
+              </div>
+              <div class="tickets">
+                <p>{{ article.metafields.custom.tickets_title }}</p>
+                <p><span>Call or Message</span> <a href="tel:8604801146">860-480-1446</a></p>
+                
+              </div>
+            </div>
+           
+          </div>
+      {% comment %}
+          <div class="envent_days">
+            <h6>{{ article.metafields.custom.event_dates }}</h6>
+          </div>
+      {% endcomment %}
+        </div>
+      </div>
+            
+    {% endfor %} 
+  {% endfor %}
+  </div>
+  
+  
+</div>
+
+{% schema %}
+{
+  "name": "Shows Settings",
+  "settings": [
+    {
+    "type": "text",
+    "id": "blog_title",
+    "label": "Blog title",
+    "default": "Test Blog Title"
+    },
+	{
+      "type": "link_list",
+      "id": "link_list",
+      "label": "Blog List"
+    }
+  ]
+}
+{% endschema %}

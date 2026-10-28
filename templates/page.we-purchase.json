@@ -1,0 +1,59 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-we-purchase",
+      "disabled": true,
+      "settings": {}
+    },
+    "c4bb556f-3efe-4192-ba79-e10f00579fef": {
+      "type": "Img-and-text",
+      "blocks": {
+        "template--16083524059325__c4bb556f-3efe-4192-ba79-e10f00579fef-16771534726658ce72-0": {
+          "type": "heading",
+          "settings": {
+            "heading": "Sell or Trade Rehome your Jewelery"
+          }
+        },
+        "fa1d004e-b1a8-49fc-b7ff-6b7cdaac73d9": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Trusted and well known, Lawrence Jeffrey is happy to make a confidential offer on any jewelry; antique, estate, new or broken that you are considering selling. Experience the confidence and credibility of traditional peer to peer transactions and enjoy immediate payment. Auctions or consignment resellers can mean delayed payments, commissions, hidden costs, loss of control over your property and the uncertainty of what the final price will be. Since the 1970s, we have served the public. Call, email or meet us at our Gallery.</p>\n\n<div class=\"contact-info\">\n    <p class=\"mail-to\"><b>Email Address:</b> <a href=\"mailto:info@lawrencejeffrey.com\">info@lawrencejeffrey.com</a></p>\n    <p><b>Telephone:</b> 860.567.5084 or 860.567.0951</p>\n    <p><b>Mobile Phone:</b> 860.480.1446</p>\n    <p><b>Street Address:</b> 7 West Street Litchfield, CT 06759</p>\n    <p><b>Postal Address:</b> P.O. Box 1334 Litchfield, CT 06759</p>\n</div>"
+          }
+        }
+      },
+      "block_order": [
+        "template--16083524059325__c4bb556f-3efe-4192-ba79-e10f00579fef-16771534726658ce72-0",
+        "fa1d004e-b1a8-49fc-b7ff-6b7cdaac73d9"
+      ],
+      "custom_css": [],
+      "settings": {
+        "image": "shopify://shop_images/web_purchase.png",
+        "height": "auto",
+        "color_scheme": "background-1",
+        "layout": "text_first",
+        "add_class": "web-purchase"
+      }
+    },
+    "8b00a82f-9d33-4872-86b7-98d3829d981a": {
+      "type": "contact-form",
+      "disabled": true,
+      "settings": {
+        "heading": "Make An Inquiry Today"
+      }
+    }
+  },
+  "order": [
+    "main",
+    "c4bb556f-3efe-4192-ba79-e10f00579fef",
+    "8b00a82f-9d33-4872-86b7-98d3829d981a"
+  ]
+}

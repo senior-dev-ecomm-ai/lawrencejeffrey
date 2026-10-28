@@ -1,0 +1,37 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "banner": {
+      "type": "main-collection-banner",
+      "custom_css": [],
+      "settings": {}
+    },
+    "product-grid": {
+      "type": "main-collection-product-grid-original",
+      "disabled": true,
+      "settings": {
+        "products_per_page": 30,
+        "tag_line": "Less is more...and more is more."
+      }
+    },
+    "c0f8e9b9-d91f-4924-aad8-5135d075ea39": {
+      "type": "custom-liquid",
+      "settings": {
+        "custom_liquid": "<div class=\"insta_title\">\n<p class=\"title\">InstaShop</p>\n<p class=\"lg_logo\">LJ</p>\n</div>\n<div id=\"insta-feed\"></div>"
+      }
+    }
+  },
+  "order": [
+    "banner",
+    "product-grid",
+    "c0f8e9b9-d91f-4924-aad8-5135d075ea39"
+  ]
+}

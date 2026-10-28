@@ -1,0 +1,15 @@
+<!--suppress HtmlUnknownTarget -->
+<div class="search-dropdown-tablet search-dropdown">
+    <form id="search-form-tablet" action="{{ routes.search_url }}" method="get" role="search" class="search">
+        <label>
+            <input id="Search-In-Modal"
+                   type="search"
+                   name="q"
+                   value="{{ search.terms | escape }}"
+                   placeholder="Enter Keywords or Item Number">
+            <i class="fal fa-search search-icon"></i>
+        </label>
+        <button type="submit" class="search-submit">Search</button>
+        
+    </form>
+</div>

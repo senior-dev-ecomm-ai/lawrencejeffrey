@@ -1,0 +1,154 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "banner": {
+      "type": "main-collection-banner",
+      "settings": {}
+    },
+    "product-grid": {
+      "type": "main-collection-product-grid",
+      "blocks": {
+        "c137b0f0-3975-41e7-8e81-13d1da7cbf12": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/18962hi_crop.jpg",
+            "row_placement": 4,
+            "column_placement": 4,
+            "double_width": false,
+            "double_height": false,
+            "row_placement_1": 10,
+            "column_placement_1": 1,
+            "double_width_1": false,
+            "double_height_1": false
+          }
+        },
+        "2e9ff8b9-180c-4d71-8671-87c91dfc0851": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/134192369_209938940742470_9048866425845995638_n_18151292845106005.jpg",
+            "row_placement": 6,
+            "column_placement": 1,
+            "double_width": true,
+            "double_height": true,
+            "row_placement_1": 10,
+            "column_placement_1": 1,
+            "double_width_1": false,
+            "double_height_1": false
+          }
+        },
+        "43bcdfce-b220-4eba-bc7f-a4837b5de540": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/ligten_up.jpg",
+            "row_placement": 9,
+            "column_placement": 4,
+            "double_width": false,
+            "double_height": false,
+            "row_placement_1": 10,
+            "column_placement_1": 1,
+            "double_width_1": false,
+            "double_height_1": false
+          }
+        },
+        "47d5780f-e495-4278-ad37-4392f68ca6d4": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/59353394_675311816241456_7734337524777970872_n_18047237626108005.jpg",
+            "row_placement": 10,
+            "column_placement": 1,
+            "double_width": false,
+            "double_height": false,
+            "row_placement_1": 10,
+            "column_placement_1": 1,
+            "double_width_1": false,
+            "double_height_1": false
+          }
+        },
+        "2c147b98-5ad9-4280-afd4-e8ffa7cd30f5": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/dAFQ-1Yc_crop.jpg",
+            "row_placement": 12,
+            "column_placement": 2,
+            "double_width": true,
+            "double_height": true,
+            "row_placement_1": 10,
+            "column_placement_1": 1,
+            "double_width_1": false,
+            "double_height_1": false
+          }
+        },
+        "674058ac-f847-4712-942c-05f811cc022d": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/zeditDSC00166c_turquoise_eyes_croip.jpg",
+            "row_placement": 15,
+            "column_placement": 1,
+            "double_width": false,
+            "double_height": false,
+            "row_placement_1": 10,
+            "column_placement_1": 1,
+            "double_width_1": false,
+            "double_height_1": false
+          }
+        },
+        "fba41b4d-b3c9-465e-8f9a-974e7766f5aa": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/IMG_1039c_58b7c4c0-f78e-410f-a03c-792e615625b7.jpg",
+            "row_placement": 17,
+            "column_placement": 3,
+            "double_width": true,
+            "double_height": true,
+            "row_placement_1": 10,
+            "column_placement_1": 1,
+            "double_width_1": false,
+            "double_height_1": false
+          }
+        },
+        "05fd180b-4fc4-44d4-b191-aaa5fb4a7d47": {
+          "type": "image",
+          "disabled": true,
+          "settings": {
+            "image": "shopify://shop_images/crop.jpg",
+            "row_placement": 21,
+            "column_placement": 2,
+            "double_width": false,
+            "double_height": false,
+            "image_1": "shopify://shop_images/CTCK7834.jpg",
+            "row_placement_1": 23,
+            "column_placement_1": 3,
+            "double_width_1": true,
+            "double_height_1": true
+          }
+        }
+      },
+      "block_order": [
+        "c137b0f0-3975-41e7-8e81-13d1da7cbf12",
+        "2e9ff8b9-180c-4d71-8671-87c91dfc0851",
+        "43bcdfce-b220-4eba-bc7f-a4837b5de540",
+        "47d5780f-e495-4278-ad37-4392f68ca6d4",
+        "2c147b98-5ad9-4280-afd4-e8ffa7cd30f5",
+        "674058ac-f847-4712-942c-05f811cc022d",
+        "fba41b4d-b3c9-465e-8f9a-974e7766f5aa",
+        "05fd180b-4fc4-44d4-b191-aaa5fb4a7d47"
+      ],
+      "settings": {
+        "products_per_page": 560,
+        "tag_line": "Less is more...and more is more."
+      }
+    }
+  },
+  "order": [
+    "banner",
+    "product-grid"
+  ]
+}

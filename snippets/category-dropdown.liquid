@@ -1,0 +1,61 @@
+<div class="category-dropdown dropdown-{{ placement }} dropdown-{{ category }}"
+     {% if category == 'jewelry' and placement == 'desktop' %}
+        style="flex-direction: row-reverse;"         
+      {% endif %}     
+     >
+    
+  {% if category == 'jewelry' %}
+  	<div class="dropdown-decoration-left">
+  {% else %}
+  	<div class="dropdown-decoration">
+  {% endif %}
+        {% if category == 'objets' and placement == 'mobilehome' %}
+            <img alt="" src="{{ 'menu-vase.jpg' | asset_url }}">
+        {% elsif category == 'jewelry' and placement == 'mobilehome' %}
+            <img alt="" src="{{ 'menu-bug.jpg' | asset_url }}">
+      {% elsif category == 'objets' and placement == 'mobile' %}
+            <img alt="" src="{{ 'menu-vase.jpg' | asset_url }}">
+        {% elsif category == 'objets' %}
+            <img alt="" src="{{ 'women-object.png' | asset_url }}">
+        {% elsif category == 'jewelry' %}
+            <img alt="" src="{{ 'menu-gold-stuff.png' | asset_url }}">
+        {% endif %}
+    </div>
+    <div class="dropdown-items">
+      
+        {% for link in links %}
+      		{% if placement == 'desktop' %}
+            	
+              {% if forloop.index < 20 %}
+              <div class="header-dropdown-item">
+                  <a class="header-dropdown-link" href="{{ link.url }}">{{ link.title }}</a>
+              </div>
+              {% endif %}
+      
+      		{% else %}
+              <div class="header-dropdown-item">
+                  <a class="header-dropdown-link" href="{{ link.url }}">{{ link.title }}</a>
+              </div>
+      		{% endif %}
+        {% endfor %}
+    </div>
+    <div class="dropdown-items-left"
+         {% if category == 'jewelry' %}
+         	style="justify-content: end;"
+         {% else %}         
+         	style="justify-content: end;text-align: right;"         
+         {% endif %}>
+      
+        {% for link in links %}
+      		{% if placement == 'desktop' %}
+            	
+      			  {% if forloop.index >= 20 %}
+      				<div class="header-dropdown-item">
+                        <a class="header-dropdown-link" href="{{ link.url }}">{{ link.title }}</a>
+                    </div>
+                  {% endif %}
+      
+      		{% endif %}
+        {% endfor %}
+    </div>
+</div>

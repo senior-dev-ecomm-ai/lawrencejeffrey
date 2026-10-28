@@ -1,0 +1,46 @@
+<link rel="stylesheet"  href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.css"/>
+<script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.umd.js"></script>
+
+
+{% for image_group in page.metafields.custom.image_groups.value %}
+  <div class="grid-item gallery_lists">
+    <div class="card-wrapper"> 
+      {% assign image_group_index = forloop.index %}
+      <div class="card-image">
+          {% for image in image_group.group_images.value %}
+            {% unless forloop.first %}
+              <a href="{{ image | img_url: '' }}" data-fancybox="gallery_{{ image_group_index }}" style="display: none">
+                <img class="sub-image" src="{{ image | image_url: width: 350 }}">
+              </a>
+            {% else %}
+              <a href="{{ image | img_url: '' }}" data-fancybox="gallery_{{ image_group_index }}" data-caption="{{ image_group.image_content.value.children[0].children[0].value }}">
+              <img class="main-image" src="{{ image | image_url: width: 350 }}">
+              </a>
+            {% endunless %}
+
+             <script>
+              Fancybox.bind('[data-fancybox="gallery_{{ image_group_index }}"]', {
+                caption: (fancybox, slide) => {
+                const caption = slide.caption || "";
+            
+                return `${caption}`;
+              },
+              });
+            </script>
+          {% endfor %}
+      </div>
+      <div class="gallery_number">
+        <p>{{ image_group.inventory_number.value }}</p>
+      </div>
+      {%- if image_group.price.value != blank -%}
+      <div class="gallery-price">    
+       <p>${{ image_group.price.value | remove: '.0' }}</p>
+      </div>
+      {%- endif -%}
+    </div>  
+  </div>
+
+ 
+  
+{% endfor %}
+

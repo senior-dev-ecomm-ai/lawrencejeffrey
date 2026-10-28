@@ -1,0 +1,59 @@
+<div class="about-us-page">
+    <div class="intro">
+        <div class="intro-header">
+            <h2> {{ section.settings.intro_title }} </h2>
+        </div>
+        <div class="intro-body">
+            <div class="about-us-photo">
+                {%- if section.settings.image != blank -%}
+                    <img src="{{ section.settings.image | img_url: 'master' }}"
+                         alt="{{ section.settings.image.alt | escape }}"
+                         loading="lazy"
+                      >
+                {%- else -%}
+                    {{ 'image' | placeholder_svg_tag: 'placeholder-svg' }}
+                {%- endif -%}
+            </div>
+            <div class="about-us-main">{{ section.settings.intro_text }}</div>
+        </div>
+        <div class="motto">
+            {{ section.settings.intro_motto }}
+        </div>
+    </div>
+</div>
+{% schema %}
+{
+"name": "Text Box",
+"settings": [
+{
+"id": "intro_title",
+"type": "text",
+"label": "Text box heading",
+"default": "Title"
+},
+{
+"type": "image_picker",
+"id": "image",
+"label": "Intro image"
+},
+{
+"id": "intro_text",
+"type": "richtext",
+"label": "Add custom text below",
+"default": "<p>Add your text here</p>"
+},
+{
+"id": "intro_motto",
+"type": "text",
+"label": "Add motto text here",
+"default": "Motto"
+}
+],
+"presets": [
+{
+"name": "Intro",
+"category": "Custom"
+}
+]
+}
+{% endschema %}

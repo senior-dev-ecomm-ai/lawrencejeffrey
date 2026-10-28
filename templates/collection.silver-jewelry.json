@@ -1,0 +1,107 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "banner": {
+      "type": "main-collection-banner",
+      "settings": {}
+    },
+    "product-grid": {
+      "type": "main-collection-product-grid",
+      "blocks": {
+        "c137b0f0-3975-41e7-8e81-13d1da7cbf12": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/WI9zp3eo_crop.jpg",
+            "row_placement": 4,
+            "column_placement": 4,
+            "double_width": false,
+            "double_height": false,
+            "row_placement_1": 10,
+            "column_placement_1": 1,
+            "double_width_1": false,
+            "double_height_1": false
+          }
+        },
+        "2e9ff8b9-180c-4d71-8671-87c91dfc0851": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/252059315_414497123610953_1274338032010110753_n_18197204791187386_crop.jpg",
+            "row_placement": 6,
+            "column_placement": 1,
+            "double_width": true,
+            "double_height": true,
+            "row_placement_1": 10,
+            "column_placement_1": 1,
+            "double_width_1": false,
+            "double_height_1": false
+          }
+        },
+        "43bcdfce-b220-4eba-bc7f-a4837b5de540": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/IMG_7968_12b188ab-8a7d-425f-80a2-eb2bd1a1f34f.jpg",
+            "row_placement": 10,
+            "column_placement": 2,
+            "double_width": false,
+            "double_height": false,
+            "row_placement_1": 10,
+            "column_placement_1": 1,
+            "double_width_1": false,
+            "double_height_1": false
+          }
+        },
+        "2c147b98-5ad9-4280-afd4-e8ffa7cd30f5": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/106410032_2172857749524295_4464817486917838579_n_17887929733602877_272093de-5c27-431e-880a-2ec3f8c0cf05.jpg",
+            "row_placement": 12,
+            "column_placement": 2,
+            "double_width": true,
+            "double_height": true,
+            "row_placement_1": 10,
+            "column_placement_1": 1,
+            "double_width_1": false,
+            "double_height_1": false
+          }
+        },
+        "674058ac-f847-4712-942c-05f811cc022d": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/203581997_115345157435332_6603417167806205422_n_18095262493251435.jpg",
+            "row_placement": 15,
+            "column_placement": 1,
+            "double_width": false,
+            "double_height": false,
+            "row_placement_1": 10,
+            "column_placement_1": 1,
+            "double_width_1": false,
+            "double_height_1": false
+          }
+        }
+      },
+      "block_order": [
+        "c137b0f0-3975-41e7-8e81-13d1da7cbf12",
+        "2e9ff8b9-180c-4d71-8671-87c91dfc0851",
+        "43bcdfce-b220-4eba-bc7f-a4837b5de540",
+        "2c147b98-5ad9-4280-afd4-e8ffa7cd30f5",
+        "674058ac-f847-4712-942c-05f811cc022d"
+      ],
+      "settings": {
+        "products_per_page": 112,
+        "tag_line": "Less is more...and more is more."
+      }
+    }
+  },
+  "order": [
+    "banner",
+    "product-grid"
+  ]
+}

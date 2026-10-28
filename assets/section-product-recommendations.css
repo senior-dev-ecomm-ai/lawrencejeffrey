@@ -1,0 +1,23 @@
+.product-recommendations {
+  display: block;
+}
+
+.product-recommendations__heading {
+  font-size: 2rem;
+  font-weight: bold;
+  margin: 0;
+  margin-bottom: 3rem;
+}
+
+.product-recommendations .product-recommendations__image {
+  max-width: 60%;
+}
+
+@media screen and (max-width: 599px) {
+.product-recommendations__heading {
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin: 0;
+    margin-bottom: 2rem;
+  }
+}

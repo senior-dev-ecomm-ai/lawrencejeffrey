@@ -1,0 +1,24 @@
+
+<div id="CollectionProductGrid" class="collection_template">    
+    <div class="collection">    
+      <div id="main-collection-product-grid" data-id="{{ section.id }}">
+        {% render 'prive-header' %}
+      
+        {% render 'gallery-card' %}
+       
+        
+        {% if image != blank %}
+        <div class="grid-item double-size non-product rank-1 file-3 main_featured_col">  
+          <div class="non-product-image">
+           <img class="bottom-banner" src="{{ image | img_url: "master" }}" alt="">
+          </div>
+        </div>
+        {% endif %}
+      </div>
+    
+      {%- if paginate.pages > 1 -%}
+        {% render 'pagination', paginate: paginate, anchor: '' %}
+      {%- endif -%}
+    </div>
+
+</div>

@@ -1,0 +1,18 @@
+<!--suppress HtmlUnknownTarget -->
+
+<div class="search-dropdown-desktop search-dropdown">
+    <form action="{{ routes.search_url }}" method="get" role="search" class="search">
+        <div class="desktop_sarch">
+            <input id="Search-In-Modal-desk"
+                   type="search"
+                   name="q"
+                   placeholder="Enter Keywords or Item Number"
+                   value="{{ search.terms | escape }}"
+                   >
+          	<button type="submit"> {% comment %}<i class="fas fa-search"></i> {% endcomment %}
+              <p class="sarch_btn">GO</p>
+            </button>
+        </div>
+      
+    </form>
+</div>

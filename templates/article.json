@@ -1,0 +1,122 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "881f57f8-a9b0-4ba0-90a3-7ce4e406d21c": {
+      "type": "rich-text",
+      "blocks": {
+        "template--16123092009149__881f57f8-a9b0-4ba0-90a3-7ce4e406d21c-16890882094199dcdf-0": {
+          "type": "heading",
+          "settings": {
+            "heading": "{{ article.title }}",
+            "heading_size": "h1"
+          }
+        },
+        "template--16123092009149__881f57f8-a9b0-4ba0-90a3-7ce4e406d21c-16890882094199dcdf-1": {
+          "type": "text",
+          "settings": {
+            "text": "<h3>{{ article.metafields.custom.event_dates.value }}</h3><p>{{ article.metafields.custom.event_details | metafield_tag }}</p>"
+          }
+        },
+        "53ff2153-447f-46c7-854e-503aac72890b": {
+          "type": "button",
+          "settings": {
+            "button_label": "View Other Upcoming Events",
+            "button_link": "shopify://pages/shows",
+            "button_style_secondary": true
+          }
+        }
+      },
+      "block_order": [
+        "template--16123092009149__881f57f8-a9b0-4ba0-90a3-7ce4e406d21c-16890882094199dcdf-0",
+        "template--16123092009149__881f57f8-a9b0-4ba0-90a3-7ce4e406d21c-16890882094199dcdf-1",
+        "53ff2153-447f-46c7-854e-503aac72890b"
+      ],
+      "settings": {
+        "color_scheme": "background-1",
+        "full_width": false,
+        "add_class": ""
+      }
+    },
+    "main": {
+      "type": "main-article",
+      "disabled": true,
+      "blocks": {
+        "featured_image": {
+          "type": "featured_image",
+          "disabled": true,
+          "settings": {
+            "image_height": "adapt"
+          }
+        },
+        "content": {
+          "type": "content",
+          "disabled": true,
+          "settings": {}
+        },
+        "title": {
+          "type": "title",
+          "disabled": true,
+          "settings": {
+            "blog_show_date": true,
+            "blog_show_author": false
+          }
+        },
+        "share": {
+          "type": "share",
+          "disabled": true,
+          "settings": {
+            "share_label": "Share"
+          }
+        }
+      },
+      "block_order": [
+        "featured_image",
+        "content",
+        "title",
+        "share"
+      ],
+      "settings": {}
+    },
+    "27a398ce-fd29-4d1e-bec7-956a02e814a1": {
+      "type": "image-with-text",
+      "disabled": true,
+      "blocks": {
+        "67fd33f2-fd56-4f23-a3d8-9418cddc194d": {
+          "type": "heading",
+          "settings": {
+            "heading": "{{ article.metafields.custom.event_dates.value }}"
+          }
+        },
+        "template--16123092009149__27a398ce-fd29-4d1e-bec7-956a02e814a1-1689082080f42faa27-1": {
+          "type": "text",
+          "settings": {
+            "text": "<p><strong>Dates: </strong><strong>{{ article.metafields.custom.event_dates.value }}</strong></p><p><strong>The Details:</strong> {{ article.metafields.custom.event_details | metafield_tag }}</p><p></p>"
+          }
+        }
+      },
+      "block_order": [
+        "67fd33f2-fd56-4f23-a3d8-9418cddc194d",
+        "template--16123092009149__27a398ce-fd29-4d1e-bec7-956a02e814a1-1689082080f42faa27-1"
+      ],
+      "settings": {
+        "image": "{{ article.metafields.custom.event_banner_image.value }}",
+        "height": "small",
+        "color_scheme": "background-1",
+        "layout": "image_first"
+      }
+    }
+  },
+  "order": [
+    "881f57f8-a9b0-4ba0-90a3-7ce4e406d21c",
+    "main",
+    "27a398ce-fd29-4d1e-bec7-956a02e814a1"
+  ]
+}

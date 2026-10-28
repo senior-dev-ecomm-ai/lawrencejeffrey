@@ -1,0 +1,99 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-product",
+      "blocks": {
+        "description": {
+          "type": "description",
+          "settings": {}
+        },
+        "3cd330dd-26fa-4464-8f88-2a437715594b": {
+          "type": "custom_liquid",
+          "disabled": true,
+          "settings": {
+            "custom_liquid": "<pickup-availability class=\"product__pickup-availabilities no-js-hidden\" available=\"\" data-base-url=\"https://lawrence-jeffrey.myshopify.com/\" data-variant-id=\"43193545294013\" data-has-only-default-variant=\"true\"><pickup-availability-preview class=\"pickup-availability-preview\"><svg class=\"icon icon-tick\" aria-hidden=\"true\" focusable=\"false\" xmlns=\"http://www.w3.org/2000/svg\" fill=\"none\" viewBox=\"0 0 20 20\">\n  <path fill=\"#108043\" stroke=\"#fff\" d=\"M16.136 6.979h0l.003-.004a1.499 1.499 0 00-2.275-1.954l-5.945 6.777-1.858-1.859A1.499 1.499 0 103.94 12.06l2.999 3s0 0 0 0c.289.29.675.44 1.1.439h.019a1.5 1.5 0 001.08-.522l6.998-7.998z\"></path>\n</svg>\n<div class=\"pickup-availability-info\"><p class=\"caption-large\">Pickup available at <span class=\"color-foreground\">7 West St</span></p>\n        <p class=\"caption\">Usually ready in 4 hours</p>\n        <button id=\"ShowPickupAvailabilityDrawer\" class=\"pickup-availability-button link link--text underlined-link\" aria-haspopup=\"dialog\">View store information\n</button></div>\n  </pickup-availability-preview></pickup-availability>"
+          }
+        },
+        "d61ac8f8-5350-4ed1-a20e-bc201c4d8a1b": {
+          "type": "product_specs",
+          "settings": {}
+        },
+        "buy_buttons": {
+          "type": "buy_buttons",
+          "settings": {
+            "show_dynamic_checkout": true
+          }
+        },
+        "price": {
+          "type": "price",
+          "settings": {}
+        },
+        "contact_buttons_QrbAng": {
+          "type": "contact_buttons",
+          "settings": {
+            "contact_1": "Visit",
+            "contact_1_url": "https://goo.gl/maps/q71e8yfYrDS8F6nK8",
+            "contact_2": "Call",
+            "contact_2_url": "tel:+1 860-567-5084",
+            "contact_3": "Shows",
+            "contact_3_url": "https://lawrence-jeffrey.myshopify.com/pages/shows"
+          }
+        }
+      },
+      "block_order": [
+        "description",
+        "3cd330dd-26fa-4464-8f88-2a437715594b",
+        "d61ac8f8-5350-4ed1-a20e-bc201c4d8a1b",
+        "buy_buttons",
+        "price",
+        "contact_buttons_QrbAng"
+      ],
+      "settings": {
+        "enable_sticky_info": false,
+        "store_location": "Litchfield",
+        "hide_variants": false,
+        "enable_video_looping": true,
+        "your_jewelry": "Your jewelry will arrive in a lovely presentation box.<br> Where possible, an outer box will also be included.",
+        "all_gemstones": "All gemstones are natural without color alteration or glass fill, stones that are traditionally heated may be heated unless stated otherwise. For a complete explanation of how information regarding our pieces is derived please click <a href=\"https://lawrence-jeffrey.myshopify.com/pages/guarantee\">Provisos.</a>",
+        "introduce_description": "Your jewelry will arrive in a lovely presentation box.<br> Where possible, an outer box will also be included.",
+        "small_description": "All gemstones are natural without color alteration or glass fill, stones that are traditionally heated may be heated unless stated otherwise. For a complete explanation of how information regarding our pieces is derived please click <a href=\"https://lawrence-jeffrey.myshopify.com/pages/guarantee\">Provisos.</a>",
+        "custom_description": "<p class=\"guaranted_des\"><strong>Our Guarantee:</strong> Items purchased from LAWRENCE JEFFREY are fully guaranteed. You can return any purchase within 5 days of your receiving it for any reason.</p><p class=\"payment_method\"><strong>Payment Methods:</strong> VISA, MasterCard, American Express, Discover, PayPal, and wire transfers accepted.</p>",
+        "ask_question_label": "Ask a question",
+        "ask_question_url": "",
+        "email_question_label": "info@lawrencejeffrey.com",
+        "email_question_url": "",
+        "shop_number_heading": "Shop:",
+        "shop_number_label": "860.567.5084",
+        "shop_number_url": "tel:8605675084",
+        "mobile_number_heading": "Mobile:",
+        "mobile_number_label": "860.480.1146",
+        "mobile_number_url": "tel:8604801146"
+      }
+    },
+    "product-recommendations": {
+      "type": "product-recommendations",
+      "disabled": true,
+      "settings": {
+        "heading": "You may also like",
+        "image_ratio": "adapt",
+        "show_secondary_image": false,
+        "add_image_padding": false,
+        "show_image_outline": true,
+        "show_vendor": false
+      }
+    }
+  },
+  "order": [
+    "main",
+    "product-recommendations"
+  ]
+}

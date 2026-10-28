@@ -1,0 +1,65 @@
+<div class="collection-filters" id="main-collection-filters" data-id="{{ section.id }}">
+    {%- assign total_active_values = 0 -%}
+    <collection-filters-form class="facets">
+        <form id="CollectionFiltersForm">
+            {% if collection.current_vendor or collection.current_type %}
+                <input type="hidden" name="q"
+                       value="{{ collection.current_vendor }}{{ collection.current_type }}">
+            {% endif %}
+
+            <div class="sorting caption">
+                <label class=" sort-button_mobile sort-button fancy" for="SortBy">
+                    See it your way <i class="fa fa-caret-down sort-button-caret"></i>
+                </label>
+                            
+              <div id="collection-sort-menu" class="sort-dropdown-menu ">
+                  <div id="manual" class="collection-sort-menu-item" data-sort="created-descending">
+                     Newest First
+                  </div>   
+              
+                  <div id="price-ascending" class="collection-sort-menu-item" data-sort="price-ascending">
+                      Price, Low to High
+                  </div>
+                  <div id="price-descending" class="collection-sort-menu-item" data-sort="price-descending">
+                      Price, High to Low
+                  </div>
+                </div>
+              
+                <noscript>
+                    <button type="submit"
+                            class="facets__button-no-js button button--tertiary">{{ 'sections.collection_template.sort_button' | t }}</button>
+                </noscript>
+            </div>
+			
+        </form>
+    </collection-filters-form>
+</div>
+
+<script>
+  var isDropdownOpen = false;
+  
+$(document).ready(function(){  
+  
+  $(".sort-button_mobile").click(function(e){
+    e.stopPropagation()
+    
+    if(isDropdownOpen == false){
+    	$(".sort-dropdown-menu").css("display","block");
+      	$(this).css("color","#ff8120");
+      	isDropdownOpen = true;
+    }else{
+    	$(".sort-dropdown-menu").css("display","none");
+      	$(this).css("color","black");
+      	isDropdownOpen = false;
+    }
+  });
+
+  $(document).click(function(){
+    $(".sort-dropdown-menu").css("display","none");
+    $(".sort-button_mobile").css("color","black");
+    isDropdownOpen = false;
+  });   
+    
+});
+  
+</script>

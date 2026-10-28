@@ -1,0 +1,43 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "163510605010cc1e50": {
+      "type": "apps",
+      "blocks": {
+        "fffdb94c-e17c-49db-975c-4eb4685d04e1": {
+          "type": "shopify://apps/instafeed/blocks/app-block/c447db20-095d-4a10-9725-b5977662c9d5",
+          "settings": {
+            "html_area": ""
+          }
+        }
+      },
+      "block_order": [
+        "fffdb94c-e17c-49db-975c-4eb4685d04e1"
+      ],
+      "disabled": true,
+      "settings": {
+        "include_margins": true
+      }
+    },
+    "c1282d94-6764-4e6e-941e-1535b6195938": {
+      "type": "instafeed",
+      "settings": {
+        "heading_size": 20,
+        "feed_width": 100,
+        "html_area": "<div class=\"insta-feed_title\">\n  <h2>InstaShop</h2>\n  <p>Shop Lawrence Jeffrey's Instagram.</p>\n<p>Just click any post for the details.</p>\n</div>"
+      }
+    }
+  },
+  "order": [
+    "163510605010cc1e50",
+    "c1282d94-6764-4e6e-941e-1535b6195938"
+  ]
+}

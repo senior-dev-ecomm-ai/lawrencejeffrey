@@ -1,0 +1,399 @@
+{% comment %}theme-check-disable UndefinedObject{% endcomment %}
+{{ 'section-footer-ljj.css' | asset_url | stylesheet_tag }}
+<!--suppress HtmlUnknownTarget -->
+<link rel="stylesheet" href="{{ 'component-newsletter.css' | asset_url }}" media="print" onload="this.media='all'">
+<link rel="stylesheet" href="{{ 'component-accordion.css' | asset_url }}" media="print" onload="this.media='all'">
+<link rel="stylesheet" href="{{ 'component-list-menu.css' | asset_url }}" media="print" onload="this.media='all'">
+<link rel="stylesheet" href="{{ 'component-list-payment.css' | asset_url }}" media="print" onload="this.media='all'">
+<link rel="stylesheet" href="{{ 'component-list-social.css' | asset_url }}" media="print" onload="this.media='all'">
+<link rel="stylesheet" href="{{ 'component-rte.css' | asset_url }}" media="print" onload="this.media='all'">
+<link rel="stylesheet" href="{{ 'disclosure.css' | asset_url }}" media="print" onload="this.media='all'">
+
+<noscript>{{ 'component-newsletter.css' | asset_url | stylesheet_tag }}</noscript>
+<noscript>{{ 'component-accordion.css' | asset_url | stylesheet_tag }}</noscript>
+<noscript>{{ 'component-list-menu.css' | asset_url | stylesheet_tag }}</noscript>
+<noscript>{{ 'component-list-payment.css' | asset_url | stylesheet_tag }}</noscript>
+<noscript>{{ 'component-list-social.css' | asset_url | stylesheet_tag }}</noscript>
+<noscript>{{ 'component-rte.css' | asset_url | stylesheet_tag }}</noscript>
+<noscript>{{ 'disclosure.css' | asset_url | stylesheet_tag }}</noscript>
+
+{% if template contains "page" or template contains "collection" or template contains "customers" or template contains "cart"  %}
+  {% unless template.suffix contains "previet" %}
+<div class="footer-buttons mobile-only">
+  <div class="footer-button"><a style="color:white;" href="https://www.google.com/search?sa=X&sca_esv=578359623&biw=430&bih=740&q=Lawrence%20Jeffrey%20Estate%20Jewelers&ludocid=7982945296116616280&ibp=gwp%3B0%2C7&lsig=AB86z5V7fshFTZ-6cMlC--3GKibE&kgs=5a7a013f9d1fe727&shndl=-1&source=sh%2Fx%2Floc%2Fact%2Fm1%2Fcan%2F3&asid=canlbse">Visit</a></div>
+  <div class="footer-button"><a style="color:white;" href="tel:+1 860-567-5084">Call</a></div>
+  <div class="footer-button"><a style="color:white;" href="https://lawrence-jeffrey.myshopify.com/pages/shows">Shows</a></div>
+</div>
+    {% endunless %}
+{% endif %}
+
+{% render 'footer-dropdown' %}
+
+<footer class="ljj-footer">
+  <hr class="ljj-divider mobile-only"/>
+  <div class="footer-main">
+    <div class="footer-links desktop-only">
+
+      {% for block in section.blocks %}
+  {% if block.type == 'link_list' %}
+    {% assign menu = linklists[block.settings.menu] %}
+    {% if menu %}
+      <div class="link-column {{ block.settings.column_class }}">
+        {% for link in menu.links %}
+          <div class="footer-link"><a href="{{ link.url }}">{{ link.title }}</a></div>
+        {% endfor %}
+      </div>
+    
+    {% endif %}
+  {% endif %}
+{% endfor %}
+
+      <!-- <div class="link-column column-one">
+       
+      
+        <div class="footer-link"><a href="/pages/about-us">About Us</a></div>
+        <div class="footer-link"><a href="/pages/shipping">Shipping</a></div>
+        <div class="footer-link"><a href="/pages/payments">Payment</a></div>
+        <div class="footer-link"><a href="/pages/shows">Show Schedule</a></div>
+        
+      </div>
+      <div class="link-column column-two">
+        <div class="footer-link"><a href="/pages/contact-us">Contact Us</a></div>
+        <div class="footer-link"><a href="/pages/sustainability">Sustainability</a></div>
+        <div class="footer-link"><a href="/pages/contact-us">Shop Hours</a></div>
+        <div class="footer-link"><a href="/pages/we-purchase">We Purchase</a></div>
+      </div>
+      <div class="link-column column-three">
+        <div class="footer-link"><a href="/pages/guarantee">Guarantee</a></div>
+        <div class="footer-link"><a href="/pages/charities">Charities</a></div>
+        <div class="footer-link"><a href="/pages/contact-us">Directions</a></div>
+        <div class="footer-link"><a href="/pages/buyers-bill-of-rights">Buyer's Rights</a></div>        
+      </div> -->
+      
+    </div>
+    <div class="footer-info">     
+      <div class="info-bottom">
+       <div class="logo_link">
+         <a href="/">
+           <img class="main_logo" src="{{ section.settings.main_logo | img_url: 'master' }}">
+           <img class="hover_logo" src="{{ section.settings.main_logo_hover | img_url: 'master' }}"> 
+         </a>
+        </div>
+      </div>
+    </div>
+    <div class="dropdown-menu not-desktop">
+      <i class="fas fa-bars open-footer-menu" onclick="ToggleFooterMenu()"></i>
+      <i class="fas fa-times close-footer-menu" onclick="ToggleFooterMenu()" style="display: none;"></i>
+    </div>
+    <div class="footer-sharing desktop-only">
+      <div class="sharing-wrapper">
+        <div class="sharing-top">Follow Us</div>
+        <div class="sharing-bottom">
+          <a href="https://www.facebook.com/people/Lawrence-Jeffrey-Estate-Jewelers/61556184756165/?mibextid=LQQJ4d" target="_blank" class="facebook_link">
+          <svg xmlns="http://www.w3.org/2000/svg" class="svg-icon" style="width: 3.2rem;height: 3.2rem;vertical-align: middle;fill: #09f;overflow: hidden;" viewBox="0 0 1024 1024" version="1.1"><path d="M864 64H160A96 96 0 0 0 64 160v704a96 96 0 0 0 96 96h274.5V655.38h-126V512h126v-109.28c0-124.3 74-192.96 187.34-192.96 54.28 0 111.04 9.68 111.04 9.68v122h-62.54c-61.62 0-80.84 38.24-80.84 77.46V512h137.56l-22 143.38h-115.56V960H864a96 96 0 0 0 96-96V160a96 96 0 0 0-96-96z"/></svg>
+          </a>
+          <a href="http://instagram.com/lawrencejeffreyestatejewelers?ref=badge" target="_blank" class="insta_link">
+           <svg xmlns="http://www.w3.org/2000/svg" class="svg-icon" style="width: 3.6rem; height: 3.6rem;vertical-align: middle;fill: #09f;overflow: hidden;" viewBox="0 0 1024 1024" version="1.1"><path d="M739.84 232.96a51.2 51.2 0 1 0 51.2 51.2 51.2 51.2 0 0 0-51.2-51.2z m196.266667 103.253333a323.84 323.84 0 0 0-19.626667-103.68 210.773333 210.773333 0 0 0-49.493333-75.52 200.533333 200.533333 0 0 0-75.52-49.066666 311.466667 311.466667 0 0 0-103.68-20.053334C642.56 85.333333 628.053333 85.333333 512 85.333333s-130.56 0-175.786667 2.56a311.466667 311.466667 0 0 0-103.68 20.053334 203.946667 203.946667 0 0 0-75.52 49.066666 200.533333 200.533333 0 0 0-49.066666 75.52 311.466667 311.466667 0 0 0-20.053334 103.68C85.333333 381.44 85.333333 395.946667 85.333333 512s0 130.56 2.56 175.786667a311.466667 311.466667 0 0 0 20.053334 103.68 200.533333 200.533333 0 0 0 49.066666 75.52 203.946667 203.946667 0 0 0 75.52 49.066666 311.466667 311.466667 0 0 0 103.68 20.053334C381.44 938.666667 395.946667 938.666667 512 938.666667s130.56 0 175.786667-2.56a311.466667 311.466667 0 0 0 103.68-20.053334 200.533333 200.533333 0 0 0 75.52-49.066666 206.933333 206.933333 0 0 0 49.493333-75.52 323.84 323.84 0 0 0 19.626667-103.68c0-45.226667 2.56-59.733333 2.56-175.786667s0-130.56-2.56-175.786667zM859.306667 682.666667a239.36 239.36 0 0 1-14.506667 79.36 130.56 130.56 0 0 1-32 49.066666 136.106667 136.106667 0 0 1-49.066667 32 239.36 239.36 0 0 1-79.36 14.506667c-42.666667 2.133333-58.453333 2.56-170.666666 2.56s-128 0-170.666667-2.56a244.48 244.48 0 0 1-82.773333-12.8 139.52 139.52 0 0 1-46.933334-32 128 128 0 0 1-31.573333-49.066667 236.373333 236.373333 0 0 1-17.066667-81.066666c0-42.666667-2.56-58.453333-2.56-170.666667s0-128 2.56-170.666667a236.373333 236.373333 0 0 1 14.933334-81.066666A128 128 0 0 1 213.333333 213.333333a133.973333 133.973333 0 0 1 46.933334-34.133333A244.48 244.48 0 0 1 341.333333 164.693333c42.666667 0 58.453333-2.56 170.666667-2.56s128 0 170.666667 2.56a239.36 239.36 0 0 1 79.36 14.506667 130.56 130.56 0 0 1 50.773333 34.133333 130.56 130.56 0 0 1 32 46.933334 239.36 239.36 0 0 1 14.506667 81.066666c2.133333 42.666667 2.56 58.453333 2.56 170.666667s-0.426667 128-2.56 170.666667zM512 293.12A218.88 218.88 0 1 0 731.306667 512 218.453333 218.453333 0 0 0 512 293.12z m0 360.96A142.08 142.08 0 1 1 654.08 512 142.08 142.08 0 0 1 512 654.08z"/></svg>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="space_block" style="height: 30px;"><p></p></div>
+</footer>
+
+{% javascript %}
+  class LocalizationForm extends HTMLElement {
+    constructor() {
+      super();
+      this.elements = {
+        input: this.querySelector('input[name="locale_code"], input[name="country_code"]'),
+        button: this.querySelector('button'),
+        panel: this.querySelector('ul'),
+      };
+      this.elements.button.addEventListener('click', this.openSelector.bind(this));
+      this.elements.button.addEventListener('focusout', this.closeSelector.bind(this));
+      this.addEventListener('keyup', this.onContainerKeyUp.bind(this));
+
+      this.querySelectorAll('a').forEach(item => item.addEventListener('click', this.onItemClick.bind(this)));
+    }
+
+    hidePanel() {
+      this.elements.button.setAttribute('aria-expanded', 'false');
+      this.elements.panel.setAttribute('hidden', true);
+    }
+
+    onContainerKeyUp(event) {
+      if (event.code.toUpperCase() !== 'ESCAPE') return;
+      
+      this.hidePanel();
+      this.elements.button.focus();
+    }
+
+    onItemClick(event) {
+      event.preventDefault();
+      this.elements.input.value = event.currentTarget.dataset.value;
+      this.querySelector('form')?.submit();
+    }
+
+    openSelector() {
+      this.elements.button.focus();
+      this.elements.panel.toggleAttribute('hidden');
+      this.elements.button.setAttribute('aria-expanded', (this.elements.button.getAttribute('aria-expanded') === 'false').toString());
+    }
+
+    closeSelector(event) {
+      const shouldClose = event.relatedTarget && event.relatedTarget.nodeName === 'BUTTON';
+      if (event.relatedTarget === null || shouldClose) {
+        this.hidePanel();
+      }
+    }
+  }
+
+  customElements.define('localization-form', LocalizationForm);
+{% endjavascript %}
+
+<script>
+  var isMenuOpen = false;
+
+function ToggleFooterMenu() {
+  var footerDropdown = document.querySelector(".ljj-footer-dropdown-mobile");
+  var openFooterMenu = document.querySelector(".open-footer-menu");
+  var closeFooterMenu = document.querySelector(".close-footer-menu");
+
+  if (!isMenuOpen) {
+    footerDropdown.style.display = "flex";
+    openFooterMenu.style.display = "none";
+    closeFooterMenu.style.display = "block";
+    isMenuOpen = true;
+  } else {
+    footerDropdown.style.display = "none";
+    openFooterMenu.style.display = "block";
+    closeFooterMenu.style.display = "none";
+    isMenuOpen = false;
+  }
+}
+
+  </script>
+
+<!-- <script>
+	var isMenuOpen = false;
+  	
+function ToggleFooterMenu() {
+  if(!isMenuOpen){
+  	$(".ljj-footer-dropdown-mobile").css("display","flex");
+    $(".open-footer-menu").css("display","none");
+    $(".close-footer-menu").css("display","block");
+    isMenuOpen = true;
+  }else{
+  	$(".ljj-footer-dropdown-mobile").css("display","none");
+    $(".open-footer-menu").css("display","block");
+    $(".close-footer-menu").css("display","none");
+    isMenuOpen = false;
+  }
+}
+</script> -->
+
+
+
+           
+{% schema %}
+{
+  "name": "t:sections.footer.name",
+
+  "blocks": [
+    {
+      "type": "link_list",
+      "name": "t:sections.footer.blocks.link_list.name",
+      "settings": [
+        {
+          "type": "text",
+          "id": "heading",
+          "default": "Quick links",
+          "label": "t:sections.footer.blocks.link_list.settings.heading.label",
+          "info": "t:sections.footer.blocks.link_list.settings.heading.info"
+        },
+        {
+          "type": "link_list",
+          "id": "menu",
+          "default": "footer",
+          "label": "t:sections.footer.blocks.link_list.settings.menu.label",
+          "info": "t:sections.footer.blocks.link_list.settings.menu.info"
+        },
+        {
+          "type": "text",
+          "id": "column_class",
+          "label": "Column Class"
+        }
+      
+      ]
+    },
+    {
+      "type": "text",
+      "name": "t:sections.footer.blocks.text.name",
+      "settings": [
+        {
+          "type": "text",
+          "id": "heading",
+          "default": "Heading",
+          "label": "t:sections.footer.blocks.text.settings.heading.label"
+        },
+        {
+          "type": "richtext",
+          "id": "subtext",
+          "default": "<p>Share store details, promotions, or brand content with your customers.</p>",
+          "label": "t:sections.footer.blocks.text.settings.subtext.label"
+        }
+      ]
+    },
+    {
+      "type": "image",
+      "name": "Image",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Image"
+        },
+        {
+          "type": "range",
+          "id": "image_width",
+          "min": 50,
+          "max": 350,
+          "step": 5,
+          "unit": "px",
+          "label": "Image width",
+          "default": 100
+        },
+        {
+          "type": "select",
+          "id": "alignment",
+          "label": "Image alignment on large screen",
+          "options": [
+            {
+              "value": "",
+              "label": "Left"
+            },
+            {
+              "value": "center",
+              "label": "Center"
+            },
+            {
+              "value": "right",
+              "label": "Right"
+            }
+          ],
+          "default": "center"
+        }
+      ]
+    }
+  ],
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "main_logo",
+      "label": "Main Logo"
+    },
+    {
+      "type": "image_picker",
+      "id": "main_logo_hover",
+      "label": "Main Logo Hover"
+    },
+    {
+      "type": "select",
+      "id": "color_scheme",
+      "options": [
+        {
+          "value": "accent-1",
+          "label": "t:sections.footer.settings.color_scheme.options__1.label"
+        },
+        {
+          "value": "accent-2",
+          "label": "t:sections.footer.settings.color_scheme.options__2.label"
+        },
+        {
+          "value": "background-1",
+          "label": "t:sections.footer.settings.color_scheme.options__3.label"
+        },
+        {
+          "value": "background-2",
+          "label": "t:sections.footer.settings.color_scheme.options__4.label"
+        },
+        {
+          "value": "inverse",
+          "label": "t:sections.footer.settings.color_scheme.options__5.label"
+        }
+      ],
+      "default": "background-1",
+      "label": "t:sections.footer.settings.color_scheme.label"
+    },
+    {
+      "type": "header",
+      "content": "t:sections.footer.settings.header__1.content",
+      "info": "t:sections.footer.settings.header__1.info"
+    },
+    {
+      "type": "checkbox",
+      "id": "newsletter_enable",
+      "default": true,
+      "label": "t:sections.footer.settings.newsletter_enable.label"
+    },
+    {
+      "type": "text",
+      "id": "newsletter_heading",
+      "default": "Sign up to our emails",
+      "label": "t:sections.footer.settings.newsletter_heading.label"
+    },
+    {
+      "type": "header",
+      "content": "t:sections.footer.settings.header__2.content",
+      "info": "t:sections.footer.settings.header__2.info"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_social",
+      "default": false,
+      "label": "t:sections.footer.settings.show_social.label"
+    },
+    {
+      "type": "header",
+      "content": "t:sections.footer.settings.header__3.content",
+      "info": "t:sections.footer.settings.header__4.info"
+    },
+    {
+      "type": "checkbox",
+      "id": "enable_country_selector",
+      "default": true,
+      "label": "t:sections.footer.settings.enable_country_selector.label"
+    },
+    {
+      "type": "header",
+      "content": "t:sections.footer.settings.header__5.content",
+      "info": "t:sections.footer.settings.header__6.info"
+    },
+    {
+      "type": "checkbox",
+      "id": "enable_language_selector",
+      "default": true,
+      "label": "t:sections.footer.settings.enable_language_selector.label"
+    },
+    {
+      "type": "header",
+      "content": "t:sections.footer.settings.header__7.content"
+    },
+    {
+      "type": "checkbox",
+      "id": "payment_enable",
+      "default": true,
+      "label": "t:sections.footer.settings.payment_enable.label"
+    }
+  ],
+  "default": {
+    "blocks": [
+      {
+        "type": "link_list"
+      }
+    ]
+  }
+}
+{% endschema %}

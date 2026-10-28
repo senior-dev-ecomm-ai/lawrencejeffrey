@@ -1,0 +1,72 @@
+
+<div class="
+  {%- if section.settings.header_side != 'right' -%}
+    two-column-text-section home-row not-mobile header-left
+  {%- else -%}
+    two-column-text-section home-row not-mobile header-right
+  {%- endif -%}">
+  
+  <div class="two-column-header">
+   
+   {% if section.settings.header != 'blank' %}
+     {{ section.settings.header | escape }}
+   {% endif %}
+
+    {%- if section.settings.image != blank -%}
+       <img src="{{ section.settings.image| img_url: '420x' }}"
+                 alt="{{ section.settings.image | escape }}"
+                 loading="lazy" >
+    {%- endif -%}
+  </div>
+  
+  <div class="two-column-text jeffrey_content">
+    {{ section.settings.text }}
+  </div>
+  
+</div>
+
+{% schema %}
+  {
+    "name": "Header and HTML Columns",
+    "settings": [
+      {
+        "id": "header",
+        "type": "text",
+        "label": "Row Header",
+        "default": "Lawrence Jeffrey"
+      }, 
+      {
+        "type": "image_picker",
+        "id": "image",
+        "label": "Header Image"
+      },
+      {
+        "id": "text",
+        "type": "html",
+        "label": "Add custom text below",
+        "default": "<p>Add your text here</p>"
+      }, 
+      {
+        "type": "radio",
+        "id": "header_side",
+        "label": "Header Side",
+        "options": [
+          {
+            "value": "left",
+            "label": "Left"
+          }, {
+            "value": "right",
+            "label": "Right"
+          }
+        ],
+        "default": "left"
+      }
+    ],
+    "presets": [
+      {
+        "name": "Header and HTML Columns",
+        "category": "Custom"
+      }
+    ]
+  }
+{% endschema %}

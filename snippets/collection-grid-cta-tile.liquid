@@ -1,0 +1,50 @@
+{% comment %}
+  One editorial image in the collection product grid.
+
+  Accepts:
+  - image: {Image}
+  - row: {Number} row on this page
+  - column: {Number}
+  - double_width: {Boolean}
+  - double_height: {Boolean}
+{% endcomment %}
+
+{%- liquid
+  assign size_class = 'single-size'
+  if double_width and double_height
+    assign size_class = 'double-size'
+  elsif double_width
+    assign size_class = 'single-size double-width'
+  elsif double_height
+    assign size_class = 'single-size double-height'
+  endif
+-%}
+
+<style>
+  .grid-item.non-product.file-{{ column }} {
+    grid-column-start: {{ column }};
+  }
+  .grid-item.non-product.rank-{{ row }} {
+    grid-row-start: {{ row }};
+  }
+  {%- if double_width and double_height == false -%}
+    .grid-item.double-width.rank-{{ row }} {
+      grid-column-end: span 2;
+    }
+  {%- endif -%}
+  {%- if double_height and double_width == false -%}
+    .grid-item.double-height.rank-{{ row }} {
+      grid-row-end: span 2;
+    }
+  {%- endif -%}
+</style>
+<div class="grid-item {{ size_class }} non-product rank-{{ row }} file-{{ column }}">
+  <div class="non-product-image">
+    <img
+      src="{{ image | image_url: width: 1600 }}"
+      alt="{{ image.alt | escape }}"
+      width="{{ image.width }}"
+      height="{{ image.height }}"
+    >
+  </div>
+</div>

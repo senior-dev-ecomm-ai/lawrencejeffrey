@@ -1,0 +1,28 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-contact-us",
+      "custom_css": [
+        "body.ljj-body a {color: #0098ff; text-decoration: none; font-family: Kozuka;}"
+      ],
+      "settings": {
+        "info_column": "<h2>Contact Us</h2>\n\n            <div class=\"contact-info\">\n                <div class=\"contact-info-row\">\n                    <div class=\"name\">Email Address:</div>\n                    <div class=\"value email_for\"><a href=\"mailto:info@lawrencejeffrey.com\">info@lawrencejeffrey.com</a></div>\n                </div>\n                <div class=\"contact-info-row\">\n                    <div class=\"name\">Telephone:</div>\n                    <div class=\"value\">860.567.5084 or 860.567.0951</div>\n                </div>\n                <div class=\"contact-info-row\">\n                    <div class=\"name\">Mobile Phone:</div>\n                    <div class=\"value\">860.480.1446</div>\n                </div>\n                <div class=\"contact-info-row\">\n                    <div class=\"name\">Street Address:</div>\n                    <div class=\"value\">7 West Street Litchfield, CT 06759</div>\n                </div>\n                <div class=\"contact-info-row\">\n                    <div class=\"name\">Postal Address:</div>\n                    <div class=\"value\">P.O. Box 1334 Litchfield, CT 06759</div>\n                </div>\n            </div>\n\n            <h2>Hours</h2>\n          <div class=\"see-you-tablet\">\n            <div class=\"hours-info\">\n                <div class=\"name\">Visit us at our gallery 7 days a week</div>\n                <div class=\"name\">Monday - Saturday 10am to 5pm</div>\n                <div class=\"name\">Sunday 12pm to 5pm</div>\n            </div>\n\n            <div class=\"valediction fancy\">See you soon!</div>\n            </div>",
+        "image_right": "shopify://shop_images/storefront.webp",
+        "map_url": "https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d95257.32802034334!2d-73.2598137!3d41.7465899!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89e790ceffffffff%3A0x6ec91e738c680c58!2sLawrence%20Jeffrey%20Estate%20Jewelers!5e0!3m2!1sen!2sin!4v1634644793543!5m2!1sen!2sin",
+        "map_content": "Find Us!"
+      }
+    }
+  },
+  "order": [
+    "main"
+  ]
+}
